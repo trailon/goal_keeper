@@ -1,0 +1,67 @@
+name: destech_template_app
+description: A new Flutter project.
+version: 1.0.0+1
+publish_to: none
+environment:
+  sdk: '>=3.1.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+    
+  cupertino_icons: ^1.0.2
+  # Fonts
+  google_fonts: ^6.1.0
+
+  bubble: ^1.2.1
+
+  # Network
+  dio: ^5.3.3
+
+  # State Management
+  provider: ^6.0.5
+  
+  # Page/Screen Navigator
+  auto_route: ^7.8.4
+
+  get: ^4.6.1
+  get_it: ^7.2.0
+  injectable: ^2.3.2
+
+  animations: ^2.0.3
+
+
+  image_provider:
+    git:
+      url: https://github.com/trailon/image_provider.git
+  focused_image_widget:
+    git:
+      url: https://github.com/CosmosExmo/focused_image_widget.git
+  flare_flutter: ^3.0.2
+  flutter_easyloading: ^3.0.5
+  dio_cache_interceptor: ^3.5.0
+  awesome_dio_interceptor: ^1.1.0
+  change_case: ^2.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  # Generator Starter
+  build_runner: ^2.1.5
+  # Code Generators
+  auto_route_generator: ^7.3.2
+  injectable_generator: ^2.4.1
+
+  # Lints
+  flutter_lints: ^3.0.0
+
+flutter:
+
+  uses-material-design: true
+
+
+  assets:
+    - assets/animations/
+
