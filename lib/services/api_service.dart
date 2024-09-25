@@ -1,8 +1,8 @@
-import 'package:destech_template_app/api/api_response.dart';
-import 'package:destech_template_app/api/api_route.dart';
-import 'package:destech_template_app/api/decodable.dart';
-import 'package:destech_template_app/utils/service_constants.dart';
 import 'package:dio/dio.dart';
+import 'package:goal_keeper/api/api_response.dart';
+import 'package:goal_keeper/api/api_route.dart';
+import 'package:goal_keeper/api/decodable.dart';
+import 'package:goal_keeper/utils/service_constants.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton

@@ -1,10 +1,10 @@
-import 'package:destech_template_app/api/api_response.dart';
-import 'package:destech_template_app/api/api_route.dart';
-import 'package:destech_template_app/api/request_options.dart';
-import 'package:destech_template_app/models/yesorno_model.dart';
-import 'package:destech_template_app/utils/service_constants.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:goal_keeper/api/api_response.dart';
+import 'package:goal_keeper/api/api_route.dart';
+import 'package:goal_keeper/api/request_options.dart';
+import 'package:goal_keeper/models/yesorno_model.dart';
+import 'package:goal_keeper/utils/service_constants.dart';
 
 import '../../app/blueprints/base_viewmodel.dart';
 

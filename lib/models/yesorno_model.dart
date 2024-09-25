@@ -1,4 +1,4 @@
-import 'package:destech_template_app/api/decodable.dart';
+import 'package:goal_keeper/api/decodable.dart';
 import 'package:flutter/material.dart';
 
 class YesOrNoModel extends Decodable {

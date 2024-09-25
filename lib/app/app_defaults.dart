@@ -3,6 +3,10 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 class AppDefaults {
+  static const kBaseUrl = "";
+  static const kSupaBaseUrl = "https://lqbibggcemzxmucwuqcb.supabase.co";
+  static const kSupaBaseAnonKey =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxxYmliZ2djZW16eG11Y3d1cWNiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ3NDc1MTEsImV4cCI6MjAzMDMyMzUxMX0.mc7mG9HbTICqWQtw4ZD-mJt6BzQPzne18kakeRmHUsQ";
   static const kStandartOpacity = 0.2;
   static const kStandartDetailViewTopPadding = 80.0;
   static const kStandartPagePadding = 12.0;

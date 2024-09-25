@@ -1,4 +1,4 @@
-package com.example.destech_template_app
+package com.codedigitize.goalkeeper
 
 import io.flutter.embedding.android.FlutterActivity
 

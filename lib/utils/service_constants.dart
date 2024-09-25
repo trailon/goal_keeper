@@ -1,4 +1,4 @@
-import 'package:destech_template_app/api/interceptors/custom_interceptor.dart';
+import 'package:goal_keeper/api/interceptors/custom_interceptor.dart';
 import 'package:dio/dio.dart';
 
 class ServiceVariables {

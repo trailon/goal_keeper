@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:destech_template_app/views/detail_view/detail_view.dart';
-import 'package:destech_template_app/views/home_view/home_view.dart';
+import 'package:goal_keeper/views/detail_view/detail_view.dart';
+import 'package:goal_keeper/views/home_view/home_view.dart';
 
 part 'router.gr.dart';
 

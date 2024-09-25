@@ -1,7 +1,7 @@
-import 'package:destech_template_app/app/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:goal_keeper/app/router/router.dart';
 
 import '../../app/blueprints/base_viewmodel.dart';
 

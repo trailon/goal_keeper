@@ -1,6 +1,6 @@
 {
-    "name": "destech_template_app",
-    "short_name": "destech_template_app",
+    "name": "goal_keeper",
+    "short_name": "goal_keeper",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

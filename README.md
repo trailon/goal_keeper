@@ -1,4 +1,4 @@
-# destech_template_app
+# goal_keeper
 
 A new Flutter project.
 

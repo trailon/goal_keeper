@@ -1,14 +1,14 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:destech_template_app/app/app_config.dart';
-import 'package:destech_template_app/utils/reset_focus.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:goal_keeper/app/app_config.dart';
+import 'package:goal_keeper/utils/reset_focus.dart';
 
 import 'app/themes/light_theme.dart';
-import 'package:flutter/material.dart';
 
-class DestechTemplateApp extends StatelessWidget {
-  const DestechTemplateApp({super.key});
+class GoalKeeper extends StatelessWidget {
+  const GoalKeeper({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,8 @@ class DestechTemplateApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       builder: (context, child) {
-        debugPrint("TextScale: ${MediaQuery.of(context).textScaler.toString()}");
+        debugPrint(
+            "TextScale: ${MediaQuery.of(context).textScaler.toString()}");
         return Navigator(
           onGenerateRoute: (settings) => MaterialPageRoute(
             builder: (context) {
@@ -24,11 +25,9 @@ class DestechTemplateApp extends StatelessWidget {
                 key: ValueKey(settings.name),
                 onTap: () => ResetFocus().initFocus(),
                 child: MediaQuery(
-                    data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1.0)),
-                    child: FlutterEasyLoading(
-                        child:
-                            child!)
-                    ),
+                    data: MediaQuery.of(context)
+                        .copyWith(textScaler: const TextScaler.linear(1.0)),
+                    child: FlutterEasyLoading(child: child!)),
               );
             },
           ),

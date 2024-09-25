@@ -1,4 +1,4 @@
-import 'package:destech_template_app/api/request_options.dart';
+import 'package:goal_keeper/api/request_options.dart';
 
 class APIRoute {
   final RequestSettings settings;

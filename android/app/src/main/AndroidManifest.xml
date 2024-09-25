@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.destech_template_app">
+    package="com.codedigitize.goalkeeper">
    <application
-        android:label="destech_template_app"
+        android:label="goal_keeper"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
