@@ -9,27 +9,6 @@
 
 part of 'router.dart';
 
-abstract class _$AppRouter extends RootStackRouter {
-  // ignore: unused_element
-  _$AppRouter({super.navigatorKey});
-
-  @override
-  final Map<String, PageFactory> pagesMap = {
-    DetailViewRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const DetailView(),
-      );
-    },
-    HomeViewRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const HomeView(),
-      );
-    },
-  };
-}
-
 /// generated route for
 /// [DetailView]
 class DetailViewRoute extends PageRouteInfo<void> {
@@ -41,7 +20,12 @@ class DetailViewRoute extends PageRouteInfo<void> {
 
   static const String name = 'DetailViewRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const DetailView();
+    },
+  );
 }
 
 /// generated route for
@@ -55,5 +39,10 @@ class HomeViewRoute extends PageRouteInfo<void> {
 
   static const String name = 'HomeViewRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const HomeView();
+    },
+  );
 }

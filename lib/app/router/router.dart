@@ -5,7 +5,7 @@ import 'package:goal_keeper/views/home_view/home_view.dart';
 part 'router.gr.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'View,Route')
-class AppRouter extends _$AppRouter {
+class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
         MaterialRoute(page: HomeViewRoute.page, initial: true),

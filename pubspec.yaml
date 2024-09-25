@@ -24,7 +24,7 @@ dependencies:
   provider: ^6.0.5
 
   # Page/Screen Navigator
-  auto_route: ^7.8.4
+  auto_route: ^9.2.2
 
   get: ^4.6.1
   get_it: ^7.2.0
@@ -47,18 +47,22 @@ dependencies:
   encrypt_shared_preferences: ^0.7.6
   shared_preferences: ^2.3.2
   intl: ^0.19.0
-
+#dependency_overrides:
+#  macos_ui:
+#    git:
+#      url: https://github.com/Mayb3Nots/macos_ui.git
+#      ref: dev
 dev_dependencies:
   flutter_test:
     sdk: flutter
   # Generator Starter
   build_runner: ^2.1.5
   # Code Generators
-  auto_route_generator: ^7.3.2
+  auto_route_generator: ^9.0.0
   injectable_generator: ^2.4.1
 
   # Lints
-  flutter_lints: ^3.0.0
+  flutter_lints: ^5.0.0
   change_app_package_name: ^1.4.0
 
 flutter:

@@ -8,27 +8,29 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:get_it/get_it.dart' as _i1;
-import 'package:injectable/injectable.dart' as _i2;
+import 'package:get_it/get_it.dart' as _i174;
+import 'package:injectable/injectable.dart' as _i526;
 
-import '../../services/api_service.dart' as _i3;
-import '../../services/popup_service.dart' as _i4;
-import '../../services/scaffold_messenger_services.dart' as _i5;
+import '../../services/api_service.dart' as _i340;
+import '../../services/popup_service.dart' as _i569;
+import '../../services/scaffold_messenger_services.dart' as _i164;
+import '../../services/supabase_service.dart' as _i681;
 
 // initializes the registration of main-scope dependencies inside of GetIt
-_i1.GetIt $initGetIt(
-  _i1.GetIt getIt, {
+_i174.GetIt $initGetIt(
+  _i174.GetIt getIt, {
   String? environment,
-  _i2.EnvironmentFilter? environmentFilter,
+  _i526.EnvironmentFilter? environmentFilter,
 }) {
-  final gh = _i2.GetItHelper(
+  final gh = _i526.GetItHelper(
     getIt,
     environment,
     environmentFilter,
   );
-  gh.lazySingleton<_i3.ApiService>(() => _i3.ApiService());
-  gh.lazySingleton<_i4.PopupService>(() => _i4.PopupService());
-  gh.lazySingleton<_i5.ScaffoldMessengerService>(
-      () => _i5.ScaffoldMessengerService());
+  gh.lazySingleton<_i681.SupaService>(() => _i681.SupaService());
+  gh.lazySingleton<_i569.PopupService>(() => _i569.PopupService());
+  gh.lazySingleton<_i164.ScaffoldMessengerService>(
+      () => _i164.ScaffoldMessengerService());
+  gh.lazySingleton<_i340.ApiService>(() => _i340.ApiService());
   return getIt;
 }

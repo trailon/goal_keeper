@@ -5,7 +5,7 @@ import 'package:image_provider/image_provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  PermissionManager.initialize();
+  PermissionManager();
   setupLocator();
   runApp(const GoalKeeper());
 }
