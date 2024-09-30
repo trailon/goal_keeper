@@ -3,18 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:goal_keeper/app/app_config.dart';
+import 'package:goal_keeper/app/themes/themes.dart';
 import 'package:goal_keeper/utils/reset_focus.dart';
-
-import 'app/themes/light_theme.dart';
+import 'package:shadcn_ui/shadcn_ui.dart';
 
 class GoalKeeper extends StatelessWidget {
   const GoalKeeper({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return ShadApp.router(
       debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.system,
       theme: lightTheme,
+      darkTheme: darkTheme,
       builder: (context, child) {
         debugPrint(
             "TextScale: ${MediaQuery.of(context).textScaler.toString()}");
@@ -41,8 +43,8 @@ class GoalKeeper extends StatelessWidget {
       locale: const Locale('tr', 'TR'),
       supportedLocales: const [
         Locale('tr', 'TR'),
+        Locale('en', 'EN'),
       ],
-      scaffoldMessengerKey: AppConfig.rootScaffoldMessengerKey,
       routerDelegate: AppConfig.appRouter.delegate(
         navigatorObservers: () => [AutoRouteObserver()],
       ),

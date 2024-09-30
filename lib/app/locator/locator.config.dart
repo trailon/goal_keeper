@@ -12,8 +12,6 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
 import '../../services/api_service.dart' as _i340;
-import '../../services/popup_service.dart' as _i569;
-import '../../services/scaffold_messenger_services.dart' as _i164;
 import '../../services/supabase_service.dart' as _i681;
 
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -28,9 +26,6 @@ _i174.GetIt $initGetIt(
     environmentFilter,
   );
   gh.lazySingleton<_i681.SupaService>(() => _i681.SupaService());
-  gh.lazySingleton<_i569.PopupService>(() => _i569.PopupService());
-  gh.lazySingleton<_i164.ScaffoldMessengerService>(
-      () => _i164.ScaffoldMessengerService());
   gh.lazySingleton<_i340.ApiService>(() => _i340.ApiService());
   return getIt;
 }

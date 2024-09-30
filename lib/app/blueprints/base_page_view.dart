@@ -12,7 +12,7 @@ import 'base_viewmodel.dart';
 
 class BasePageView<T extends BaseViewModel> extends StatelessWidget {
   final Widget? floatingActionButton;
-  final AppBar? appBar;
+  final PreferredSizeWidget? appBar;
   final Widget? drawer;
   final Widget? endDrawer;
   final Widget? content;

@@ -24,4 +24,8 @@ class HomeViewModel extends BaseViewModel {
     await appRouter.push(const DetailViewRoute());
     debugPrint('Returned from Detail View');
   }
+
+  Future<void> goalSearch(String searchText) async {
+    debugPrint(searchText);
+  }
 }

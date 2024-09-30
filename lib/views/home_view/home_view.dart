@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:goal_keeper/widgets/current_goal_widget.dart';
+import 'package:goal_keeper/widgets/layouts/shad_app_bar.dart';
 import 'package:provider/provider.dart';
 
 import '../../app/blueprints/base_page_view.dart';
@@ -15,8 +17,8 @@ class HomeView extends StatelessWidget {
       create: (context) => HomeViewModel(),
       builder: (context, _) {
         return BasePageView<HomeViewModel>(
-          appBar: AppBar(
-            title: const Text('Home View'),
+          appBar: ShadAppBar(
+            onChanged: context.read<HomeViewModel>().goalSearch,
           ),
           content: const _ViewContent(),
         );
@@ -32,8 +34,9 @@ class _ViewContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Spacer(
-          flex: 8,
+        Padding(
+          padding: const EdgeInsets.only(top: 24),
+          child: CurrentGoalWidget(),
         ),
         Center(
           child: ElevatedButton(

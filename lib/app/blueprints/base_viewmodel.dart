@@ -1,11 +1,7 @@
 import 'package:auto_route/auto_route.dart';
-// ignore: depend_on_referenced_packages
-import 'package:dialog_service/dialog_service.dart';
 import 'package:flutter/material.dart';
 
 import '../../services/api_service.dart';
-import '../../services/popup_service.dart';
-import '../../services/scaffold_messenger_services.dart';
 import '../app_config.dart';
 import '../locator/locator.dart';
 import 'api_response.dart';
@@ -14,18 +10,6 @@ abstract class BaseViewModel extends ChangeNotifier {
   //Api Service instance
   @protected
   final apiService = locator<ApiService>();
-
-  //Dialog Service instance
-  @protected
-  final dialogService = DialogService();
-
-  //Popup Service instance
-  @protected
-  final popupService = locator<PopupService>();
-
-  //Scaffold Messenger instance
-  @protected
-  final messengerService = locator<ScaffoldMessengerService>();
 
   //Context getter
   BuildContext get context => AppConfig.appRouter.navigatorKey.currentContext!;

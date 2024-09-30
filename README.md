@@ -14,3 +14,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+Current Goal Widget Icon Attribute Ref =>
+<a href="https://www.flaticon.com/free-icons/crown" title="crown icons">Crown icons created by Md Tanvirul Haque - Flaticon</a>

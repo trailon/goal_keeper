@@ -10,31 +10,23 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-
   cupertino_icons: ^1.0.2
   # Fonts
   google_fonts: ^6.1.0
-
   bubble: ^1.2.1
-
   # Network
   dio: ^5.3.3
-
   # State Management
   provider: ^6.0.5
-
   # Page/Screen Navigator
   auto_route: ^9.2.2
-
   get: ^4.6.1
   get_it: ^7.2.0
   injectable: ^2.3.2
-
   animations: ^2.0.3
-
-  image_provider:
+  permission_manager:
     git:
-      url: https://github.com/trailon/image_provider.git
+      url: https://github.com/trailon/permission_manager.git
   focused_image_widget:
     git:
       url: https://github.com/CosmosExmo/focused_image_widget.git
@@ -47,11 +39,12 @@ dependencies:
   encrypt_shared_preferences: ^0.7.6
   shared_preferences: ^2.3.2
   intl: ^0.19.0
-#dependency_overrides:
-#  macos_ui:
-#    git:
-#      url: https://github.com/Mayb3Nots/macos_ui.git
-#      ref: dev
+  shadcn_ui: ^0.9.8
+  devicelocale: ^0.8.1
+  auto_size_text: ^3.0.0
+  shadcn_flutter: ^0.0.20
+  flutter_riverpod: ^2.1.1  
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -60,16 +53,61 @@ dev_dependencies:
   # Code Generators
   auto_route_generator: ^9.0.0
   injectable_generator: ^2.4.1
-
   # Lints
   flutter_lints: ^5.0.0
   change_app_package_name: ^1.4.0
 
 flutter:
-
   uses-material-design: true
-
   assets:
     - assets/animations/
+    - assets/imgs/
+  fonts:
+    - family: GeistSans
+      fonts:
+        - asset: packages/shadcn_flutter/fonts/Geist-Black.otf
+          weight: 800
+        - asset: packages/shadcn_flutter/fonts/Geist-Bold.otf
+          weight: 700
+        - asset: packages/shadcn_flutter/fonts/Geist-Light.otf
+          weight: 300
+        - asset: packages/shadcn_flutter/fonts/Geist-Medium.otf
+          weight: 500
+        - asset: packages/shadcn_flutter/fonts/Geist-SemiBold.otf
+          weight: 600
+        - asset: packages/shadcn_flutter/fonts/Geist-Thin.otf
+          weight: 100
+        - asset: packages/shadcn_flutter/fonts/Geist-UltraBlack.otf
+          weight: 900
+        - asset: packages/shadcn_flutter/fonts/Geist-UltraLight.otf
+          weight: 200
+        - asset: packages/shadcn_flutter/fonts/Geist-Regular.otf
+          weight: 400
+    - family: GeistMono
+      fonts:
+        - asset: packages/shadcn_flutter/fonts/GeistMono-Black.otf
+          weight: 800
+        - asset: packages/shadcn_flutter/fonts/GeistMono-Bold.otf
+          weight: 700
+        - asset: packages/shadcn_flutter/fonts/GeistMono-Light.otf
+          weight: 300
+        - asset: packages/shadcn_flutter/fonts/GeistMono-Medium.otf
+          weight: 500
+        - asset: packages/shadcn_flutter/fonts/GeistMono-Regular.otf
+          weight: 400
+        - asset: packages/shadcn_flutter/fonts/GeistMono-SemiBold.otf
+          weight: 600
+        - asset: packages/shadcn_flutter/fonts/GeistMono-Thin.otf
+          weight: 100
+        - asset: packages/shadcn_flutter/fonts/GeistMono-UltraBlack.otf
+          weight: 900
+        - asset: packages/shadcn_flutter/fonts/GeistMono-UltraLight.otf
+          weight: 200
+    - family: RadixIcons
+      fonts:
+        - asset: packages/shadcn_flutter/icons/RadixIcons.otf
+    - family: BootstrapIcons
+      fonts:
+        - asset: packages/shadcn_flutter/icons/BootstrapIcons.otf
 flutter_intl:
   enabled: true

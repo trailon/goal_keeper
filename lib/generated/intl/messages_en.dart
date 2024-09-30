@@ -4,7 +4,7 @@
 // function name.
 
 // Ignore issues from commonly used lints in this file.
-// ignore_for_file:unnecessary_brace_in_string_interps, unnecessary_new, depend_on_referenced_packages
+// ignore_for_file:unnecessary_brace_in_string_interps, unnecessary_new
 // ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
 // ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
 // ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
@@ -79,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full name"),
+        "goal_keeper": MessageLookupByLibrary.simpleMessage("Goal Keeper"),
         "home_page_card1_bodytext": MessageLookupByLibrary.simpleMessage(
             "Pick from 60 varieties such as butter lettuce, shiso, Portuguese kale, and chamomile."),
         "home_page_card1_title":
@@ -99,6 +100,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Learn Plants Growing"),
         "invalid_credentials":
             MessageLookupByLibrary.simpleMessage("Invalid credentials"),
+        "my_goals": MessageLookupByLibrary.simpleMessage("Hedeflerim"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwords_not_match":
             MessageLookupByLibrary.simpleMessage("Passwords do not match"),
@@ -114,6 +116,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "qr_code_title":
             MessageLookupByLibrary.simpleMessage("Add Device with QR Code"),
         "remember_me": MessageLookupByLibrary.simpleMessage("Remember me"),
+        "search_goal":
+            MessageLookupByLibrary.simpleMessage("Search one of your GOALS"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign in"),
         "sign_in_text":
             MessageLookupByLibrary.simpleMessage("Log in to your account"),

@@ -50,6 +50,36 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Hedeflerim`
+  String get my_goals {
+    return Intl.message(
+      'Hedeflerim',
+      name: 'my_goals',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Goal Keeper`
+  String get goal_keeper {
+    return Intl.message(
+      'Goal Keeper',
+      name: 'goal_keeper',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search one of your GOALS`
+  String get search_goal {
+    return Intl.message(
+      'Search one of your GOALS',
+      name: 'search_goal',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Sign in`
   String get sign_in {
     return Intl.message(
