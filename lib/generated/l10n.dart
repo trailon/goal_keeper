@@ -90,6 +90,26 @@ class S {
     );
   }
 
+  /// `Sign in failed`
+  String get sign_in_failed {
+    return Intl.message(
+      'Sign in failed',
+      name: 'sign_in_failed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Signed in successfully`
+  String get sign_in_success {
+    return Intl.message(
+      'Signed in successfully',
+      name: 'sign_in_success',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Already have one?`
   String get sign_in_alternative {
     return Intl.message(

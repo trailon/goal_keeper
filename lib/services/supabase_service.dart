@@ -49,16 +49,17 @@ class SupaService {
           .signInWithPassword(email: email, password: password);
       if (response.session != null) {
         await client.auth.setSession(response.session!.refreshToken!);
-        EasyLoading.showSuccess('Login Success!');
+        EasyLoading.showSuccess(S.current.sign_in_success);
         return true;
       }
     } on AuthException catch (e) {
       exceptionHandler(e);
       return false;
     } catch (e) {
-      EasyLoading.showError('Login Failed!');
+      EasyLoading.showError(S.current.sign_in_failed);
       return false;
     }
+    EasyLoading.dismiss();
     return false;
   }
 
@@ -76,7 +77,6 @@ class SupaService {
       EasyLoading.dismiss();
       if (response.user != null || client.auth.currentUser != null) {
         await login(email: email, password: password);
-        await insertUserToUsers(response.user ?? client.auth.currentUser!);
         EasyLoading.showSuccess(S.current.sign_up_success);
         return true;
       }
@@ -85,16 +85,17 @@ class SupaService {
       EasyLoading.showError(S.current.sign_up_failed);
       return false;
     }
+    EasyLoading.dismiss();
     return false;
   }
 
-  Future<void> insertUserToUsers(User user) async =>
+  /* Future<void> insertUserToUsers(User user) async =>
       await client.from('users').insert({
         'user_auth_id': user.id,
         'username': user.userMetadata!["username"],
         'name': user.userMetadata!["name"],
         'email': user.email
-      });
+      }); */
 
   Future<bool> logOut() async {
     try {

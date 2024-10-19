@@ -140,6 +140,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign in"),
         "sign_in_alternative":
             MessageLookupByLibrary.simpleMessage("Already have one?"),
+        "sign_in_failed":
+            MessageLookupByLibrary.simpleMessage("Sign in failed"),
+        "sign_in_success":
+            MessageLookupByLibrary.simpleMessage("Signed in successfully"),
         "sign_in_text":
             MessageLookupByLibrary.simpleMessage("Log in to your account"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Sign up"),

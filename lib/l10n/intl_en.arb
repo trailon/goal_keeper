@@ -3,6 +3,8 @@
     "goal_keeper": "Goal Keeper",
     "search_goal": "Search one of your GOALS",
     "sign_in": "Sign in",
+    "sign_in_failed": "Sign in failed",
+    "sign_in_success": "Signed in successfully",
     "sign_in_alternative": "Already have one?",
     "sign_in_text": "Log in to your account",
     "sign_up": "Sign up",

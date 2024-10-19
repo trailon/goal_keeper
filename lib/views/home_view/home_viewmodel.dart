@@ -104,7 +104,9 @@ class HomeViewModel extends BaseViewModel {
       side: ShadSheetSide.bottom,
       context: context,
       builder: (context) => ShadSignInSheet(
+        formKey: formKey,
         side: ShadSheetSide.bottom,
+        homeViewModel: this,
         router: appRouter,
       ),
     );
@@ -115,10 +117,10 @@ class HomeViewModel extends BaseViewModel {
       side: ShadSheetSide.bottom,
       context: context,
       builder: (context) => ShadSignUpSheet(
+        formKey: formKey,
         side: ShadSheetSide.bottom,
         homeViewModel: this,
         router: appRouter,
-        formKey: formKey,
       ),
     );
   }
@@ -151,6 +153,18 @@ class HomeViewModel extends BaseViewModel {
         password: userPasswordController.text,
         firstname: userFirstNameController.text,
         username: userNameController.text,
+      );
+      appRouter.maybePop();
+    }
+  }
+
+  submitLoginForm() async {
+    final validateAll = formKey.currentState!.validate();
+    if (validateAll) {
+      EasyLoading.show();
+      final respo = await supaService.login(
+        email: userEmailController.text,
+        password: userPasswordController.text,
       );
       appRouter.maybePop();
     }

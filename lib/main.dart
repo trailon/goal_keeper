@@ -21,10 +21,6 @@ Future<void> main() async {
     url: AppDefaults.kSupaBaseUrl,
     anonKey: AppDefaults.kSupaBaseAnonKey,
   );
-  final client = Supabase.instance.client;
-  await client.auth.signOut();
-  await StorageService.pref.clear();
-  debugPrint("current user: ${client.auth.currentUser}");
   runApp(
     DevicePreview(
       enabled: false,
