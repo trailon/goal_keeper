@@ -35,7 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Add Device"),
         "devices_page_title":
             MessageLookupByLibrary.simpleMessage("Your Devices"),
-        "done": MessageLookupByLibrary.simpleMessage("Done"),
+        "done": MessageLookupByLibrary.simpleMessage("Tamam"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "email_already_exists":
             MessageLookupByLibrary.simpleMessage("Email already exists"),
@@ -78,7 +78,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter a valid password"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
-        "fullName": MessageLookupByLibrary.simpleMessage("Full name"),
         "goal_keeper": MessageLookupByLibrary.simpleMessage("Hedeflerim"),
         "home_page_card1_bodytext": MessageLookupByLibrary.simpleMessage(
             "Pick from 60 varieties such as butter lettuce, shiso, Portuguese kale, and chamomile."),
@@ -118,12 +117,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "remember_me": MessageLookupByLibrary.simpleMessage("Remember me"),
         "search_goal":
             MessageLookupByLibrary.simpleMessage("Hedeflerinizi Arayın..."),
-        "sign_in": MessageLookupByLibrary.simpleMessage("Sign in"),
+        "sign_in": MessageLookupByLibrary.simpleMessage("Giriş Yap"),
+        "sign_in_alternative":
+            MessageLookupByLibrary.simpleMessage("Zaten hesabınız var mı?"),
         "sign_in_text":
-            MessageLookupByLibrary.simpleMessage("Log in to your account"),
-        "sign_up": MessageLookupByLibrary.simpleMessage("Sign up"),
-        "sign_up_text":
-            MessageLookupByLibrary.simpleMessage("Create an account"),
+            MessageLookupByLibrary.simpleMessage("Hesabınıza Giriş Yapın"),
+        "sign_up": MessageLookupByLibrary.simpleMessage("Kayıt Ol"),
+        "sign_up_create":
+            MessageLookupByLibrary.simpleMessage("Create Account"),
         "something_went_wrong":
             MessageLookupByLibrary.simpleMessage("Something went wrong")
       };

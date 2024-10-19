@@ -66,19 +66,33 @@ class MessageLookup extends MessageLookupByLibrary {
         "email_verification_text_9":
             MessageLookupByLibrary.simpleMessage("Email verified"),
         "enter_email": MessageLookupByLibrary.simpleMessage("Enter your email"),
+        "enter_email_description": MessageLookupByLibrary.simpleMessage(
+            "An email is required to verify your account and log in between platforms"),
+        "enter_last_name":
+            MessageLookupByLibrary.simpleMessage("Enter your last name"),
+        "enter_last_name_description":
+            MessageLookupByLibrary.simpleMessage("Your last name is optional"),
+        "enter_name": MessageLookupByLibrary.simpleMessage("Enter your name"),
+        "enter_name_description": MessageLookupByLibrary.simpleMessage(
+            "Your name is required to personalize your experience and synchronize your data between platforms"),
         "enter_password":
             MessageLookupByLibrary.simpleMessage("Enter your password"),
+        "enter_username":
+            MessageLookupByLibrary.simpleMessage("Enter your username"),
         "enter_valid_confirm_password": MessageLookupByLibrary.simpleMessage(
             "Enter a valid confirm password"),
         "enter_valid_email":
             MessageLookupByLibrary.simpleMessage("Enter a valid email"),
         "enter_valid_full_name":
             MessageLookupByLibrary.simpleMessage("Enter a valid full name"),
+        "enter_valid_name": MessageLookupByLibrary.simpleMessage(
+            "Name must contains only letters"),
         "enter_valid_password":
             MessageLookupByLibrary.simpleMessage("Enter a valid password"),
+        "enter_valid_username": MessageLookupByLibrary.simpleMessage(
+            "Enter a valid username (minimum 2 characters)"),
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
-        "fullName": MessageLookupByLibrary.simpleMessage("Full name"),
         "goal_keeper": MessageLookupByLibrary.simpleMessage("Goal Keeper"),
         "home_page_card1_bodytext": MessageLookupByLibrary.simpleMessage(
             "Pick from 60 varieties such as butter lettuce, shiso, Portuguese kale, and chamomile."),
@@ -100,8 +114,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Learn Plants Growing"),
         "invalid_credentials":
             MessageLookupByLibrary.simpleMessage("Invalid credentials"),
+        "last_name": MessageLookupByLibrary.simpleMessage("Last Name"),
         "my_goals": MessageLookupByLibrary.simpleMessage("Hedeflerim"),
+        "name": MessageLookupByLibrary.simpleMessage("Your Name"),
+        "next": MessageLookupByLibrary.simpleMessage("Next"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "password_length_checker": MessageLookupByLibrary.simpleMessage(
+            "Password must be at least 6 characters long"),
         "passwords_not_match":
             MessageLookupByLibrary.simpleMessage("Passwords do not match"),
         "plants_page_title": MessageLookupByLibrary.simpleMessage("Plants"),
@@ -119,12 +138,29 @@ class MessageLookup extends MessageLookupByLibrary {
         "search_goal":
             MessageLookupByLibrary.simpleMessage("Search one of your GOALS"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign in"),
+        "sign_in_alternative":
+            MessageLookupByLibrary.simpleMessage("Already have one?"),
         "sign_in_text":
             MessageLookupByLibrary.simpleMessage("Log in to your account"),
         "sign_up": MessageLookupByLibrary.simpleMessage("Sign up"),
-        "sign_up_text":
+        "sign_up_create":
             MessageLookupByLibrary.simpleMessage("Create an account"),
+        "sign_up_failed":
+            MessageLookupByLibrary.simpleMessage("Sign up failed"),
+        "sign_up_success": MessageLookupByLibrary.simpleMessage(
+            "Account created successfully"),
+        "sign_up_text_description": MessageLookupByLibrary.simpleMessage(
+            "Create an account to access all the features of Goal Keeper, including personalized recommendations, notifications and more incoming features."),
+        "sign_up_text_suggestion": MessageLookupByLibrary.simpleMessage(
+            "Don\'t you have an account yet? Create one for a better personalized experience and synchronizing your datas between platforms"),
         "something_went_wrong":
-            MessageLookupByLibrary.simpleMessage("Something went wrong")
+            MessageLookupByLibrary.simpleMessage("Something went wrong"),
+        "user_name_description": MessageLookupByLibrary.simpleMessage(
+            "Username offers an optional personalized experience over your personal name"),
+        "username": MessageLookupByLibrary.simpleMessage("Username"),
+        "we_dont_wanna_bore_you":
+            MessageLookupByLibrary.simpleMessage("We don\'t wanna bore you."),
+        "we_dont_wanna_bore_you_description": MessageLookupByLibrary.simpleMessage(
+            "So we won\'t show the signin dialog again but if you want to sign up someday you can do it via clicking app icon at the top left!")
       };
 }

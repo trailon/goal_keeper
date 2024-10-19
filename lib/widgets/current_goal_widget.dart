@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:goal_keeper/app/app_images.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
@@ -7,6 +8,9 @@ class CurrentGoalWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var brightness =
+        SchedulerBinding.instance.platformDispatcher.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
     return Stack(
       children: [
         Padding(
@@ -19,6 +23,9 @@ class CurrentGoalWidget extends StatelessWidget {
                 ShadAccordionItem(
                   value: (content: 'Content 1', title: 'Title 1'),
                   title: Text("Task 1"),
+                  separator: Divider(
+                    color: isDarkMode ? Colors.white54 : Colors.grey,
+                  ),
                   child: Column(
                     children: [
                       ShadCheckbox(

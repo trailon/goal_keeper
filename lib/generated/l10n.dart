@@ -90,6 +90,16 @@ class S {
     );
   }
 
+  /// `Already have one?`
+  String get sign_in_alternative {
+    return Intl.message(
+      'Already have one?',
+      name: 'sign_in_alternative',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Log in to your account`
   String get sign_in_text {
     return Intl.message(
@@ -110,11 +120,51 @@ class S {
     );
   }
 
+  /// `Sign up failed`
+  String get sign_up_failed {
+    return Intl.message(
+      'Sign up failed',
+      name: 'sign_up_failed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account created successfully`
+  String get sign_up_success {
+    return Intl.message(
+      'Account created successfully',
+      name: 'sign_up_success',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Create an account`
-  String get sign_up_text {
+  String get sign_up_create {
     return Intl.message(
       'Create an account',
-      name: 'sign_up_text',
+      name: 'sign_up_create',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't you have an account yet? Create one for a better personalized experience and synchronizing your datas between platforms`
+  String get sign_up_text_suggestion {
+    return Intl.message(
+      'Don\'t you have an account yet? Create one for a better personalized experience and synchronizing your datas between platforms',
+      name: 'sign_up_text_suggestion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create an account to access all the features of Goal Keeper, including personalized recommendations, notifications and more incoming features.`
+  String get sign_up_text_description {
+    return Intl.message(
+      'Create an account to access all the features of Goal Keeper, including personalized recommendations, notifications and more incoming features.',
+      name: 'sign_up_text_description',
       desc: '',
       args: [],
     );
@@ -130,6 +180,16 @@ class S {
     );
   }
 
+  /// `Next`
+  String get next {
+    return Intl.message(
+      'Next',
+      name: 'next',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `The best app for your plants`
   String get auth_view_body {
     return Intl.message(
@@ -140,11 +200,71 @@ class S {
     );
   }
 
-  /// `Full name`
-  String get fullName {
+  /// `Your Name`
+  String get name {
     return Intl.message(
-      'Full name',
-      name: 'fullName',
+      'Your Name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name must contains only letters`
+  String get enter_valid_name {
+    return Intl.message(
+      'Name must contains only letters',
+      name: 'enter_valid_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your name`
+  String get enter_name {
+    return Intl.message(
+      'Enter your name',
+      name: 'enter_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your name is required to personalize your experience and synchronize your data between platforms`
+  String get enter_name_description {
+    return Intl.message(
+      'Your name is required to personalize your experience and synchronize your data between platforms',
+      name: 'enter_name_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last Name`
+  String get last_name {
+    return Intl.message(
+      'Last Name',
+      name: 'last_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your last name`
+  String get enter_last_name {
+    return Intl.message(
+      'Enter your last name',
+      name: 'enter_last_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your last name is optional`
+  String get enter_last_name_description {
+    return Intl.message(
+      'Your last name is optional',
+      name: 'enter_last_name_description',
       desc: '',
       args: [],
     );
@@ -220,11 +340,61 @@ class S {
     );
   }
 
+  /// `Username`
+  String get username {
+    return Intl.message(
+      'Username',
+      name: 'username',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter a valid username (minimum 2 characters)`
+  String get enter_valid_username {
+    return Intl.message(
+      'Enter a valid username (minimum 2 characters)',
+      name: 'enter_valid_username',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your username`
+  String get enter_username {
+    return Intl.message(
+      'Enter your username',
+      name: 'enter_username',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Username offers an optional personalized experience over your personal name`
+  String get user_name_description {
+    return Intl.message(
+      'Username offers an optional personalized experience over your personal name',
+      name: 'user_name_description',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Enter your email`
   String get enter_email {
     return Intl.message(
       'Enter your email',
       name: 'enter_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An email is required to verify your account and log in between platforms`
+  String get enter_email_description {
+    return Intl.message(
+      'An email is required to verify your account and log in between platforms',
+      name: 'enter_email_description',
       desc: '',
       args: [],
     );
@@ -245,6 +415,36 @@ class S {
     return Intl.message(
       'Enter a valid email',
       name: 'enter_valid_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must be at least 6 characters long`
+  String get password_length_checker {
+    return Intl.message(
+      'Password must be at least 6 characters long',
+      name: 'password_length_checker',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We don't wanna bore you.`
+  String get we_dont_wanna_bore_you {
+    return Intl.message(
+      'We don\'t wanna bore you.',
+      name: 'we_dont_wanna_bore_you',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `So we won't show the signin dialog again but if you want to sign up someday you can do it via clicking app icon at the top left!`
+  String get we_dont_wanna_bore_you_description {
+    return Intl.message(
+      'So we won\'t show the signin dialog again but if you want to sign up someday you can do it via clicking app icon at the top left!',
+      name: 'we_dont_wanna_bore_you_description',
       desc: '',
       args: [],
     );

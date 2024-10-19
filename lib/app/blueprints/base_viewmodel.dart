@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:goal_keeper/services/supabase_service.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../services/api_service.dart';
 import '../app_config.dart';
@@ -10,6 +12,12 @@ abstract class BaseViewModel extends ChangeNotifier {
   //Api Service instance
   @protected
   final apiService = locator<ApiService>();
+
+  //Supabase Client instance
+  @protected
+  final supaService = locator<SupaService>();
+
+  SupabaseClient get supaClient => supaService.client;
 
   //Context getter
   BuildContext get context => AppConfig.appRouter.navigatorKey.currentContext!;

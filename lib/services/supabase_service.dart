@@ -4,21 +4,16 @@ import 'dart:async';
 
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:goal_keeper/generated/l10n.dart';
-import 'package:goal_keeper/services/storage_service.dart';
 import 'package:injectable/injectable.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-
-import '../../app/app_defaults.dart';
 
 @lazySingleton
 class SupaService {
   late SupabaseClient _client;
-  final StorageService _storageService = StorageService();
   final String _sessionKey = 'session';
 
   SupaService() {
-    _client =
-        SupabaseClient(AppDefaults.kSupaBaseUrl, AppDefaults.kSupaBaseAnonKey);
+    _client = Supabase.instance.client;
   }
 
   SupabaseClient get client => _client;
@@ -67,21 +62,39 @@ class SupaService {
     return false;
   }
 
-  Future<bool> register({required email, required password}) async {
+  Future<bool> register(
+      {required String email,
+      required String password,
+      required String username,
+      required String firstname}) async {
     try {
       final response =
-          await client.auth.signUp(email: email, password: password);
-      if (response.user != null) {
+          await client.auth.signUp(email: email, password: password, data: {
+        "username": username,
+        "name": firstname,
+      });
+      EasyLoading.dismiss();
+      if (response.user != null || client.auth.currentUser != null) {
         await login(email: email, password: password);
-        EasyLoading.showSuccess('Register Success!');
+        await insertUserToUsers(response.user ?? client.auth.currentUser!);
+        EasyLoading.showSuccess(S.current.sign_up_success);
         return true;
       }
     } catch (e) {
-      EasyLoading.showError('Register Failed!');
+      EasyLoading.dismiss();
+      EasyLoading.showError(S.current.sign_up_failed);
       return false;
     }
     return false;
   }
+
+  Future<void> insertUserToUsers(User user) async =>
+      await client.from('users').insert({
+        'user_auth_id': user.id,
+        'username': user.userMetadata!["username"],
+        'name': user.userMetadata!["name"],
+        'email': user.email
+      });
 
   Future<bool> logOut() async {
     try {

@@ -18,6 +18,7 @@ class HomeView extends StatelessWidget {
       builder: (context, _) {
         return BasePageView<HomeViewModel>(
           appBar: ShadAppBar(
+            onTap: () => context.read<HomeViewModel>().checkForAuth(true),
             onChanged: context.read<HomeViewModel>().goalSearch,
           ),
           content: const _ViewContent(),

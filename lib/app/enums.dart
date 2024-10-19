@@ -1,0 +1,4 @@
+enum ShadAuthModal {
+  signIn,
+  signUp;
+}

@@ -5,9 +5,10 @@ import 'package:goal_keeper/generated/l10n.dart';
 import 'package:goal_keeper/widgets/animated_search_bar.dart';
 
 class ShadAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const ShadAppBar({super.key, required this.onChanged});
+  const ShadAppBar({super.key, required this.onChanged, this.onTap});
 
   final dynamic Function(String) onChanged;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class ShadAppBar extends StatelessWidget implements PreferredSizeWidget {
           backIconColor: Colors.white,
           isBackButtonVisible: true,
           onTap:
-              null, // It will push and replace this screen when pressing the back button
+              onTap, // It will push and replace this screen when pressing the back button
           //? Close Button
           closeIconColor: Colors.white,
           //? Center Title

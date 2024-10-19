@@ -1,37 +1,26 @@
-import 'package:encrypt_shared_preferences/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class StorageService {
-  late final EncryptedSharedPreferences pref;
-  final String _kRememberKey = 'rememberme';
-  final String _kEmailKey = 'email';
-  final String _kPasswordKey = 'password';
-  StorageService() {
-    SharedPreferences.getInstance()
-        .then((_) => pref = EncryptedSharedPreferences.getInstance());
-  }
+  static late SharedPreferences pref;
+  static final String _kRememberKey = 'remember';
+  static final String _kAuthAskedOnceKey = 'authaskedonce';
+  static final String _kEmailKey = 'email';
 
-  Future<void> setRemember(bool value) async {
-    await pref.setBoolean(_kRememberKey, value);
-  }
+  static Future<void> reload() async => pref.reload();
 
-  Future<void> setEmail(String email) async {
-    await pref.setString(_kEmailKey, email);
-  }
+  static Future<void> setRemember(bool value) async =>
+      await pref.setBool(_kRememberKey, value);
 
-  Future<void> setPassword(String password) async {
-    await pref.setString(_kPasswordKey, password);
-  }
+  static Future<void> setEmail(String email) async =>
+      await pref.setString(_kEmailKey, email);
 
-  bool getRemember() {
-    return pref.getBoolean(_kRememberKey) ?? false;
-  }
+  static bool getRemember() => pref.getBool(_kRememberKey) ?? false;
 
-  Future<String?> getEmail() async {
-    return pref.getString(_kEmailKey);
-  }
+  static Future<void> setAskedForAuthOnce() async =>
+      await pref.setBool(_kAuthAskedOnceKey, true);
 
-  Future<String?> getPassword() async {
-    return pref.getString(_kPasswordKey);
-  }
+  static bool getAskedForAuthOnce() =>
+      pref.getBool(_kAuthAskedOnceKey) ?? false;
+
+  static Future<String?> getEmail() async => pref.getString(_kEmailKey);
 }
