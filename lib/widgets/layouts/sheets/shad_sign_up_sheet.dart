@@ -142,19 +142,29 @@ class ShadSignUpSheet extends StatelessWidget {
                           fontWeight: FontWeight.bold),
                     ),
                     icon: Icon(Icons.password),
-                    contentBuilder: (context) => ShadCustomInputFormField(
-                      controller:
-                          context.read<HomeViewModel>().userPasswordController,
-                      onChanged:
-                          context.read<HomeViewModel>().userPasswordOnChanged,
-                      onPressed: context.read<HomeViewModel>().submitForm,
-                      validator: Validators.passwordValidator,
-                      enabled: 3 <= currentStep,
-                      id: S.current.password,
-                      obscureText: true,
-                      submitText: S.current.sign_up,
-                      placeHolder: S.current.enter_password,
-                      description: S.current.enter_password,
+                    contentBuilder: (context) => Selector<HomeViewModel, bool>(
+                      selector: (context, model) => model.obscure,
+                      builder: (context, obscure, child) =>
+                          ShadCustomInputFormField(
+                        controller: context
+                            .read<HomeViewModel>()
+                            .userPasswordController,
+                        onChanged:
+                            context.read<HomeViewModel>().userPasswordOnChanged,
+                        onPressed: context.read<HomeViewModel>().submitForm,
+                        validator: Validators.passwordValidator,
+                        enabled: 3 <= currentStep,
+                        id: S.current.password,
+                        obscure: obscure,
+                        suffixIcon: Icon(
+                          obscure ? Icons.visibility : Icons.visibility_off,
+                        ),
+                        suffixOnPressed:
+                            context.read<HomeViewModel>().switchObscure,
+                        submitText: S.current.sign_up,
+                        placeHolder: S.current.enter_password,
+                        description: S.current.enter_password,
+                      ),
                     ),
                   ),
                 ],

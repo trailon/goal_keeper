@@ -4,8 +4,9 @@ import 'package:goal_keeper/app/router/router.dart';
 import 'package:goal_keeper/generated/l10n.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
-class ShadModalSheet extends StatelessWidget {
-  const ShadModalSheet({super.key, required this.side, required this.router});
+class ShadAuthModalSheet extends StatelessWidget {
+  const ShadAuthModalSheet(
+      {super.key, required this.side, required this.router});
   final AppRouter router;
   final ShadSheetSide side;
 

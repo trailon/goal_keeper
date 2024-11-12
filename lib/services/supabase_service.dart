@@ -4,6 +4,7 @@ import 'dart:async';
 
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:goal_keeper/generated/l10n.dart';
+import 'package:goal_keeper/models/category_model.dart';
 import 'package:injectable/injectable.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -21,42 +22,20 @@ class SupaService {
   Session? get session => _client.auth.currentSession;
   GoTrueAdminApi get admin => _client.auth.admin;
 
-  /* Future<void> setSession() async {
-    if (session != null) {
-      _storageService.sharedPref!
-          .setString(_sessionKey, session!.persistSessionString);
-    }
-  }
-
-  Future<bool> recoverSession() async {
-    if (_storageService.sharedPref!.containsKey(_sessionKey)) {
-      logger.d('Found persisted session string, attempting to recover session');
-      final jsonStr = _storageService.sharedPref!.getString(_sessionKey)!;
-      final response = await client.auth.recoverSession(jsonStr);
-      if (response.session != null) {
-        logger.d(
-            'Session successfully recovered for user ID: ${response.user!.id}');
-        setSession();
-        return true;
-      }
-    }
-    return false;
-  } */
-
   Future<bool> login({required String email, required String password}) async {
     try {
       final response = await client.auth
           .signInWithPassword(email: email, password: password);
       if (response.session != null) {
         await client.auth.setSession(response.session!.refreshToken!);
-        EasyLoading.showSuccess('Login Success!');
+        EasyLoading.showSuccess(S.current.sign_in_success);
         return true;
       }
     } on AuthException catch (e) {
       exceptionHandler(e);
       return false;
     } catch (e) {
-      EasyLoading.showError('Login Failed!');
+      EasyLoading.showError(S.current.sign_in_failed);
       return false;
     }
     return false;
@@ -76,10 +55,12 @@ class SupaService {
       EasyLoading.dismiss();
       if (response.user != null || client.auth.currentUser != null) {
         await login(email: email, password: password);
-        await insertUserToUsers(response.user ?? client.auth.currentUser!);
         EasyLoading.showSuccess(S.current.sign_up_success);
         return true;
       }
+    } on AuthException catch (e) {
+      exceptionHandler(e);
+      return false;
     } catch (e) {
       EasyLoading.dismiss();
       EasyLoading.showError(S.current.sign_up_failed);
@@ -88,13 +69,42 @@ class SupaService {
     return false;
   }
 
-  Future<void> insertUserToUsers(User user) async =>
-      await client.from('users').insert({
-        'user_auth_id': user.id,
-        'username': user.userMetadata!["username"],
-        'name': user.userMetadata!["name"],
-        'email': user.email
-      });
+  Future<List<GoalCategory>> fetchCategories() async {
+    final response = await client
+        .from('categories')
+        .select('''
+         id,
+         category_name,
+         user_id,
+         created_at,
+         goals(
+           id,
+           goal_name,
+           is_achieved,
+           create_date,
+           update_date,
+           category_id,
+           chain_id,
+           chains(
+            create_date,
+            update_date,
+            chain_name
+           )
+           )''')
+        .or('user_id.eq.${user?.id},user_id.is.NULL')
+        .eq('goals.user_id', user!.id);
+    final categories = List.generate(
+      response.length,
+      (index) => GoalCategory.fromJson(response[index]),
+    );
+    return categories;
+  }
+
+  Future<bool> createANewGoalBySelectedCategory(
+      {required GoalCategory goalCategory}) async {
+    //insert a new goal
+    return true;
+  }
 
   Future<bool> logOut() async {
     try {
@@ -135,7 +145,7 @@ class SupaService {
   } */
 
   void exceptionHandler(AuthException e) {
-    switch (e.message) {
+    switch (e.code) {
       case 'invalid email':
         EasyLoading.showError(S.current.email_already_exists);
         break;
@@ -145,8 +155,10 @@ class SupaService {
       case 'Invalid login credentials':
         EasyLoading.showError(S.current.invalid_credentials);
         break;
+      case 'user_already_exists':
+        EasyLoading.showError(S.current.user_already_exists);
       default:
-      //EasyLoading.showError(e.message);
+        EasyLoading.showError(e.message);
     }
   }
 }
