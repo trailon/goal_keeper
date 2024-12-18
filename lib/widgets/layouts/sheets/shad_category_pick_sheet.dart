@@ -50,7 +50,7 @@ class ShadCategoryPickSheet extends StatelessWidget {
                   onTap: () {
                     router.maybePop<GoalCategory>(category);
                   },
-                  child: _ShadCard(
+                  child: ShadCardWithImage(
                     footer: UtilityMethods.intl(category.categoryName),
                     childImagePath: AssetStrings.dynamicCategoryAssetString(
                         category.categoryName),
@@ -61,7 +61,7 @@ class ShadCategoryPickSheet extends StatelessWidget {
                 onTap: () {
                   router.maybePop<GoalCategory>(GoalCategory.custom());
                 },
-                child: _ShadCard(
+                child: ShadCardWithImage(
                   footer: S.current.create_your_own_category,
                   childImagePath: AssetStrings.addCustomCategory,
                 ),
@@ -72,8 +72,8 @@ class ShadCategoryPickSheet extends StatelessWidget {
   }
 }
 
-class _ShadCard extends StatelessWidget {
-  const _ShadCard({required this.footer, required this.childImagePath});
+class ShadCardWithImage extends StatelessWidget {
+  const ShadCardWithImage({super.key, required this.footer, required this.childImagePath});
   final String footer;
   final String childImagePath;
 

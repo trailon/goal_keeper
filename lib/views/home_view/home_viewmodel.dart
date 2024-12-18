@@ -12,6 +12,7 @@ import 'package:goal_keeper/widgets/layouts/sheets/shad_auth_sheet.dart';
 import 'package:goal_keeper/widgets/layouts/sheets/shad_category_pick_sheet.dart';
 import 'package:goal_keeper/widgets/layouts/sheets/shad_sign_in_sheet.dart';
 import 'package:goal_keeper/widgets/layouts/sheets/shad_sign_up_sheet.dart';
+import 'package:goal_keeper/widgets/shad_components/shad_create_goal_dialog.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart' as shadcn;
 import 'package:shadcn_ui/shadcn_ui.dart';
 
@@ -123,7 +124,16 @@ class HomeViewModel extends BaseViewModel {
   }
 
   Future<void> createGoalBySelectedCategory(
-      GoalCategory selectedCategory) async {}
+      GoalCategory selectedCategory) async {
+    await showShadDialog(
+      context: context,
+      builder: (context) {
+        return ShadCreateGoalDialog(
+          goalCategory: selectedCategory,
+        );
+      },
+    );
+  }
 
   Future<void> authBottomSheetAsk([bool bypass = false]) async {
     authNav = await showShadSheet<ShadAuthModal?>(
