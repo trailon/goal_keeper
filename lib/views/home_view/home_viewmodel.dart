@@ -6,10 +6,15 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:goal_keeper/app/enums.dart';
 import 'package:goal_keeper/app/router/router.dart';
 import 'package:goal_keeper/generated/l10n.dart';
+import 'package:goal_keeper/models/category_model.dart';
 import 'package:goal_keeper/services/storage_service.dart';
 import 'package:goal_keeper/widgets/layouts/sheets/shad_auth_sheet.dart';
+import 'package:goal_keeper/widgets/layouts/sheets/shad_category_pick_sheet.dart';
+import 'package:goal_keeper/widgets/layouts/sheets/shad_goal_creation_sheet.dart';
 import 'package:goal_keeper/widgets/layouts/sheets/shad_sign_in_sheet.dart';
 import 'package:goal_keeper/widgets/layouts/sheets/shad_sign_up_sheet.dart';
+import 'package:goal_keeper/widgets/shad_components/shad_create_goal_dialog.dart';
+import 'package:provider/provider.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart' as shadcn;
 import 'package:shadcn_ui/shadcn_ui.dart';
 
@@ -18,19 +23,23 @@ import '../../app/blueprints/base_viewmodel.dart';
 class HomeViewModel extends BaseViewModel {
   ShadAuthModal? authNav;
   final formKey = GlobalKey<ShadFormState>();
-  TextEditingController userNameController =
-      TextEditingController(text: kDebugMode ? "veliksu" : null);
-  TextEditingController userEmailController =
-      TextEditingController(text: kDebugMode ? "cetinelv@gmail.com" : null);
-  TextEditingController userFirstNameController =
-      TextEditingController(text: kDebugMode ? "Kaan" : null);
-  TextEditingController userPasswordController =
-      TextEditingController(text: kDebugMode ? "315513" : null);
+  final signinformKey = GlobalKey<ShadFormState>();
+  bool obscure = true;
+  TextEditingController userNameController = TextEditingController(text: kDebugMode ? "veliksu" : null);
+  TextEditingController userEmailController = TextEditingController(text: kDebugMode ? "cetinelv@gmail.com" : null);
+  TextEditingController userFirstNameController = TextEditingController(text: kDebugMode ? "Kaan" : null);
+  TextEditingController userPasswordController = TextEditingController(text: kDebugMode ? "315513" : null);
 
-  final shadcn.StepperController stepperController =
-      shadcn.StepperController(currentStep: 0);
+  TextEditingController nameController = TextEditingController();
 
+  GoalTypeKey selectedGoalType = GoalTypeKey.normal;
+
+  final shadcn.StepperController stepperController = shadcn.StepperController(currentStep: 0);
   int get currentStep => stepperController.value.currentStep;
+
+  List<GoalCategory> categories = [];
+
+  List<GoalCategory> get categoriesWithGoals => categories.where((category) => category.goals.isNotEmpty).toList();
   @override
   void disposeModel() {}
 
@@ -42,13 +51,13 @@ class HomeViewModel extends BaseViewModel {
     SchedulerBinding.instance.addPostFrameCallback((timeStamp) async {
       setViewDidLoad(true);
       await checkForAuth();
-      EasyLoading.showSuccess('It is homeview!');
+      await fetchCategories();
+      notifyListeners();
     });
   }
 
   Future<void> checkForAuth([bool bypass = false]) async {
-    if (supaClient.auth.currentUser == null &&
-        (!StorageService.getAskedForAuthOnce() || bypass)) {
+    if (supaClient.auth.currentUser == null && (!StorageService.getAskedForAuthOnce() || bypass)) {
       await authBottomSheetAsk(bypass);
       switch (authNav) {
         case ShadAuthModal.signUp:
@@ -58,16 +67,76 @@ class HomeViewModel extends BaseViewModel {
         default:
           if (!bypass) {
             await showShadDialog(
-                context: context,
-                builder: (context) => ShadDialog.alert(
-                      title: AutoSizeText(S.current.we_dont_wanna_bore_you),
-                      child: AutoSizeText(
-                          S.current.we_dont_wanna_bore_you_description),
-                    ));
+              context: context,
+              builder: (context) => ShadDialog.alert(
+                title: AutoSizeText(S.current.we_dont_wanna_bore_you),
+                child: AutoSizeText(S.current.we_dont_wanna_bore_you_description),
+              ),
+            );
+            await super.supaClient.auth.signInAnonymously();
           }
       }
-
       await StorageService.setAskedForAuthOnce();
+    }
+  }
+
+  Future<void> fetchCategories() async {
+    categories = await supaService.fetchCategories();
+  }
+
+  Future<void> selectACategory() async {
+    final selectedCategory = await showShadSheet<GoalCategory?>(
+      context: context,
+      side: ShadSheetSide.bottom,
+      animateIn: [
+        SlideEffect(
+          begin: Offset(0, 1),
+          end: Offset.zero,
+          curve: Curves.bounceIn,
+          delay: Duration(seconds: 0),
+          duration: Duration(seconds: 1),
+        ),
+      ],
+      animateOut: [
+        SlideEffect(
+          begin: Offset.zero,
+          end: Offset(0, 1),
+          curve: Curves.linear,
+          duration: Duration(seconds: 1),
+        ),
+      ],
+      builder: (context) => ShadCategoryPickSheet(
+        side: ShadSheetSide.bottom,
+        router: appRouter,
+        categories: categories,
+      ),
+    );
+
+    if (selectedCategory == null) return;
+
+    if (selectedCategory.categoryName == "custom") {
+      return;
+    }
+
+    createGoalBySelectedCategory(selectedCategory);
+  }
+
+  Future<void> createGoalBySelectedCategory(GoalCategory selectedCategory) async {
+    final created = await showShadSheet<bool>(
+      context: context,
+      side: ShadSheetSide.bottom,
+      builder: (context) => ChangeNotifierProvider.value(
+        value: this,
+        child: ShadGoalCreationSheet(
+          selectedCategory: selectedCategory,
+        ),
+      ),
+    );
+
+    if (created == true) {
+      EasyLoading.showSuccess("Goal created");
+      await fetchCategories();
+      notifyListeners();
     }
   }
 
@@ -92,7 +161,7 @@ class HomeViewModel extends BaseViewModel {
           duration: Duration(seconds: 2),
         ),
       ],
-      builder: (context) => ShadModalSheet(
+      builder: (context) => ShadAuthModalSheet(
         side: ShadSheetSide.bottom,
         router: appRouter,
       ),
@@ -104,7 +173,8 @@ class HomeViewModel extends BaseViewModel {
       side: ShadSheetSide.bottom,
       context: context,
       builder: (context) => ShadSignInSheet(
-        formKey: formKey,
+        formKey: signinformKey,
+        homeViewModel: this,
         side: ShadSheetSide.bottom,
         homeViewModel: this,
         router: appRouter,
@@ -159,10 +229,10 @@ class HomeViewModel extends BaseViewModel {
   }
 
   submitLoginForm() async {
-    final validateAll = formKey.currentState!.validate();
+    final validateAll = signinformKey.currentState!.validate();
     if (validateAll) {
       EasyLoading.show();
-      final respo = await supaService.login(
+      await supaService.login(
         email: userEmailController.text,
         password: userPasswordController.text,
       );
@@ -190,7 +260,50 @@ class HomeViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  final colorWithOpacity = Colors.white.withOpacity(0.9);
-  Color? currentStepChecker(int index) =>
-      stepperController.value.currentStep == index ? colorWithOpacity : null;
+  void goalNameOnChanged(String value) {
+    nameController.text = value;
+    notifyListeners();
+  }
+
+  switchObscure() {
+    obscure = !obscure;
+    notifyListeners();
+  }
+
+  void setGoalType(GoalTypeKey type) {
+    selectedGoalType = type;
+    notifyListeners();
+  }
+
+  final colorWithOpacity = Colors.white.withValues(alpha: 0.9);
+  Color? currentStepChecker(int index) => stepperController.value.currentStep == index ? colorWithOpacity : null;
+
+  void testMethod() {
+    fetchCategories();
+  }
+
+  Future<void> submitGoalCreation(GoalCategory selectedCategory) async {
+    final name = nameController.text.trim();
+
+    if (name.isEmpty) {
+      EasyLoading.showError(S.current.goal_name_required);
+      return;
+    }
+
+    EasyLoading.show(status: S.current.loading);
+
+    final created = await supaService.createANewGoalBySelectedCategory(
+      goalCategory: selectedCategory,
+      goalName: name,
+      goalTypeKey: selectedGoalType.name,
+    );
+
+    EasyLoading.dismiss();
+
+    if (created && context.mounted) {
+      Navigator.of(context).pop(true);
+    } else {
+      EasyLoading.showError("Failed to create goal");
+    }
+  }
 }

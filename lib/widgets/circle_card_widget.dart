@@ -34,7 +34,7 @@ class CircleCardWidget extends StatelessWidget {
                   return BackdropFilter(
                     filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
                     child: Container(
-                        color: theme.shadowColor.withOpacity(value as double)),
+                        color: theme.shadowColor.withValues(alpha: value as double)),
                   );
                 },
               ),

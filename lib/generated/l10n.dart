@@ -50,12 +50,12 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Hedeflerim`
+  /// `My Goals`
   String get my_goals {
     return Intl.message(
-      'Hedeflerim',
+      'My Goals',
       name: 'my_goals',
-      desc: '',
+      desc: 'Label for the user\'s personal goals section on the home screen',
       args: [],
     );
   }
@@ -65,7 +65,7 @@ class S {
     return Intl.message(
       'Goal Keeper',
       name: 'goal_keeper',
-      desc: '',
+      desc: 'App name displayed in the header and splash screen',
       args: [],
     );
   }
@@ -75,7 +75,7 @@ class S {
     return Intl.message(
       'Search one of your GOALS',
       name: 'search_goal',
-      desc: '',
+      desc: 'Placeholder text for the search bar to find specific goals',
       args: [],
     );
   }
@@ -85,7 +85,7 @@ class S {
     return Intl.message(
       'Sign in',
       name: 'sign_in',
-      desc: '',
+      desc: 'Button label for user sign-in action',
       args: [],
     );
   }
@@ -115,7 +115,7 @@ class S {
     return Intl.message(
       'Already have one?',
       name: 'sign_in_alternative',
-      desc: '',
+      desc: 'Prompt asking if the user already has an account',
       args: [],
     );
   }
@@ -125,7 +125,27 @@ class S {
     return Intl.message(
       'Log in to your account',
       name: 'sign_in_text',
-      desc: '',
+      desc: 'Instruction text on the sign-in screen',
+      args: [],
+    );
+  }
+
+  /// `Logged in successfully`
+  String get sign_in_success {
+    return Intl.message(
+      'Logged in successfully',
+      name: 'sign_in_success',
+      desc: 'Notification message shown after successful login',
+      args: [],
+    );
+  }
+
+  /// `Login Failed`
+  String get sign_in_failed {
+    return Intl.message(
+      'Login Failed',
+      name: 'sign_in_failed',
+      desc: 'Notification message shown when login fails',
       args: [],
     );
   }
@@ -135,7 +155,7 @@ class S {
     return Intl.message(
       'Sign up',
       name: 'sign_up',
-      desc: '',
+      desc: 'Button label for user sign-up action',
       args: [],
     );
   }
@@ -145,7 +165,7 @@ class S {
     return Intl.message(
       'Sign up failed',
       name: 'sign_up_failed',
-      desc: '',
+      desc: 'Notification message shown when sign-up fails',
       args: [],
     );
   }
@@ -155,7 +175,7 @@ class S {
     return Intl.message(
       'Account created successfully',
       name: 'sign_up_success',
-      desc: '',
+      desc: 'Notification message shown after successful account creation',
       args: [],
     );
   }
@@ -165,7 +185,7 @@ class S {
     return Intl.message(
       'Create an account',
       name: 'sign_up_create',
-      desc: '',
+      desc: 'Heading text prompting the user to create a new account',
       args: [],
     );
   }
@@ -175,7 +195,7 @@ class S {
     return Intl.message(
       'Don\'t you have an account yet? Create one for a better personalized experience and synchronizing your datas between platforms',
       name: 'sign_up_text_suggestion',
-      desc: '',
+      desc: 'Encouragement text to motivate users to create an account',
       args: [],
     );
   }
@@ -185,7 +205,7 @@ class S {
     return Intl.message(
       'Create an account to access all the features of Goal Keeper, including personalized recommendations, notifications and more incoming features.',
       name: 'sign_up_text_description',
-      desc: '',
+      desc: 'Detailed explanation of benefits for creating an account',
       args: [],
     );
   }
@@ -195,7 +215,7 @@ class S {
     return Intl.message(
       'Done',
       name: 'done',
-      desc: '',
+      desc: 'Generic confirmation button label',
       args: [],
     );
   }
@@ -205,17 +225,7 @@ class S {
     return Intl.message(
       'Next',
       name: 'next',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `The best app for your plants`
-  String get auth_view_body {
-    return Intl.message(
-      'The best app for your plants',
-      name: 'auth_view_body',
-      desc: '',
+      desc: 'Button label to proceed to the next step or screen',
       args: [],
     );
   }
@@ -225,7 +235,7 @@ class S {
     return Intl.message(
       'Your Name',
       name: 'name',
-      desc: '',
+      desc: 'Label for the user\'s first name input field',
       args: [],
     );
   }
@@ -235,7 +245,7 @@ class S {
     return Intl.message(
       'Name must contains only letters',
       name: 'enter_valid_name',
-      desc: '',
+      desc: 'Validation message for invalid name input',
       args: [],
     );
   }
@@ -245,7 +255,7 @@ class S {
     return Intl.message(
       'Enter your name',
       name: 'enter_name',
-      desc: '',
+      desc: 'Placeholder or prompt for entering user\'s first name',
       args: [],
     );
   }
@@ -255,7 +265,7 @@ class S {
     return Intl.message(
       'Your name is required to personalize your experience and synchronize your data between platforms',
       name: 'enter_name_description',
-      desc: '',
+      desc: 'Explanation why the user\'s name is needed',
       args: [],
     );
   }
@@ -265,7 +275,7 @@ class S {
     return Intl.message(
       'Last Name',
       name: 'last_name',
-      desc: '',
+      desc: 'Label for the user\'s last name input field',
       args: [],
     );
   }
@@ -275,7 +285,7 @@ class S {
     return Intl.message(
       'Enter your last name',
       name: 'enter_last_name',
-      desc: '',
+      desc: 'Placeholder or prompt for entering user\'s last name',
       args: [],
     );
   }
@@ -285,7 +295,7 @@ class S {
     return Intl.message(
       'Your last name is optional',
       name: 'enter_last_name_description',
-      desc: '',
+      desc: 'Information that last name input is optional',
       args: [],
     );
   }
@@ -295,7 +305,7 @@ class S {
     return Intl.message(
       'Email',
       name: 'email',
-      desc: '',
+      desc: 'Label for the user\'s email input field',
       args: [],
     );
   }
@@ -305,7 +315,7 @@ class S {
     return Intl.message(
       'Password',
       name: 'password',
-      desc: '',
+      desc: 'Label for the user\'s password input field',
       args: [],
     );
   }
@@ -315,7 +325,7 @@ class S {
     return Intl.message(
       'Confirm Password',
       name: 'confirm_password',
-      desc: '',
+      desc: 'Label for the password confirmation input field',
       args: [],
     );
   }
@@ -325,7 +335,7 @@ class S {
     return Intl.message(
       'Forgot password?',
       name: 'forgot_password',
-      desc: '',
+      desc: 'Link text to initiate password recovery process',
       args: [],
     );
   }
@@ -335,7 +345,7 @@ class S {
     return Intl.message(
       'Remember me',
       name: 'remember_me',
-      desc: '',
+      desc: 'Checkbox label to keep user logged in',
       args: [],
     );
   }
@@ -345,17 +355,7 @@ class S {
     return Intl.message(
       'By creating an account you agree to our Terms of Service and Privacy Policy',
       name: 'privacy_policy_text',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Add Device with QR Code`
-  String get qr_code_title {
-    return Intl.message(
-      'Add Device with QR Code',
-      name: 'qr_code_title',
-      desc: '',
+      desc: 'Legal disclaimer shown during account creation',
       args: [],
     );
   }
@@ -365,7 +365,7 @@ class S {
     return Intl.message(
       'Username',
       name: 'username',
-      desc: '',
+      desc: 'Label for the user\'s username input field',
       args: [],
     );
   }
@@ -375,7 +375,7 @@ class S {
     return Intl.message(
       'Enter a valid username (minimum 2 characters)',
       name: 'enter_valid_username',
-      desc: '',
+      desc: 'Validation message for invalid username input',
       args: [],
     );
   }
@@ -385,7 +385,7 @@ class S {
     return Intl.message(
       'Enter your username',
       name: 'enter_username',
-      desc: '',
+      desc: 'Placeholder or prompt for entering username',
       args: [],
     );
   }
@@ -395,7 +395,7 @@ class S {
     return Intl.message(
       'Username offers an optional personalized experience over your personal name',
       name: 'user_name_description',
-      desc: '',
+      desc: 'Explanation about the optional username usage',
       args: [],
     );
   }
@@ -405,7 +405,7 @@ class S {
     return Intl.message(
       'Enter your email',
       name: 'enter_email',
-      desc: '',
+      desc: 'Placeholder or prompt for entering email address',
       args: [],
     );
   }
@@ -415,7 +415,7 @@ class S {
     return Intl.message(
       'An email is required to verify your account and log in between platforms',
       name: 'enter_email_description',
-      desc: '',
+      desc: 'Explanation why email is required',
       args: [],
     );
   }
@@ -425,7 +425,7 @@ class S {
     return Intl.message(
       'Enter your password',
       name: 'enter_password',
-      desc: '',
+      desc: 'Placeholder or prompt for entering password',
       args: [],
     );
   }
@@ -435,7 +435,7 @@ class S {
     return Intl.message(
       'Enter a valid email',
       name: 'enter_valid_email',
-      desc: '',
+      desc: 'Validation message for invalid email format',
       args: [],
     );
   }
@@ -445,7 +445,7 @@ class S {
     return Intl.message(
       'Password must be at least 6 characters long',
       name: 'password_length_checker',
-      desc: '',
+      desc: 'Validation message for password length requirement',
       args: [],
     );
   }
@@ -455,7 +455,7 @@ class S {
     return Intl.message(
       'We don\'t wanna bore you.',
       name: 'we_dont_wanna_bore_you',
-      desc: '',
+      desc: 'Friendly message explaining not to show sign-in dialog repeatedly',
       args: [],
     );
   }
@@ -465,47 +465,19 @@ class S {
     return Intl.message(
       'So we won\'t show the signin dialog again but if you want to sign up someday you can do it via clicking app icon at the top left!',
       name: 'we_dont_wanna_bore_you_description',
-      desc: '',
+      desc:
+          'Additional explanation about sign-in dialog behavior and how to sign up later',
       args: [],
     );
   }
 
-  /// `Enter a valid password`
-  String get enter_valid_password {
+  /// `User already exists`
+  String get user_already_exists {
     return Intl.message(
-      'Enter a valid password',
-      name: 'enter_valid_password',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter a valid full name`
-  String get enter_valid_full_name {
-    return Intl.message(
-      'Enter a valid full name',
-      name: 'enter_valid_full_name',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter a valid confirm password`
-  String get enter_valid_confirm_password {
-    return Intl.message(
-      'Enter a valid confirm password',
-      name: 'enter_valid_confirm_password',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Passwords do not match`
-  String get passwords_not_match {
-    return Intl.message(
-      'Passwords do not match',
-      name: 'passwords_not_match',
-      desc: '',
+      'User already exists',
+      name: 'user_already_exists',
+      desc:
+          'Error message when trying to create an account with an existing username',
       args: [],
     );
   }
@@ -515,7 +487,8 @@ class S {
     return Intl.message(
       'Email already exists',
       name: 'email_already_exists',
-      desc: '',
+      desc:
+          'Error message when trying to create an account with an existing email',
       args: [],
     );
   }
@@ -525,7 +498,8 @@ class S {
     return Intl.message(
       'Email not found',
       name: 'email_not_found',
-      desc: '',
+      desc:
+          'Error message when email is not found during login or password recovery',
       args: [],
     );
   }
@@ -535,327 +509,284 @@ class S {
     return Intl.message(
       'Invalid credentials',
       name: 'invalid_credentials',
-      desc: '',
+      desc: 'Error message for incorrect username/email or password',
       args: [],
     );
   }
 
-  /// `Something went wrong`
-  String get something_went_wrong {
+  /// `Career and Work Life`
+  String get career_and_work_life {
     return Intl.message(
-      'Something went wrong',
-      name: 'something_went_wrong',
-      desc: '',
+      'Career and Work Life',
+      name: 'career_and_work_life',
+      desc: 'Category name for goals related to career and professional life',
       args: [],
     );
   }
 
-  /// `Email verification`
-  String get email_verification {
+  /// `Personal Development`
+  String get personal_development {
     return Intl.message(
-      'Email verification',
-      name: 'email_verification',
-      desc: '',
+      'Personal Development',
+      name: 'personal_development',
+      desc: 'Category name for goals related to self-improvement and growth',
       args: [],
     );
   }
 
-  /// `We have sent you an email with a link to verify your account`
-  String get email_verification_text {
+  /// `Education and Learning`
+  String get education_and_learning {
     return Intl.message(
-      'We have sent you an email with a link to verify your account',
-      name: 'email_verification_text',
-      desc: '',
+      'Education and Learning',
+      name: 'education_and_learning',
+      desc: 'Category name for goals related to acquiring knowledge and skills',
       args: [],
     );
   }
 
-  /// `Please check your email and click on the link to verify your account`
-  String get email_verification_text_2 {
+  /// `Health and Wellness`
+  String get health_and_wellness {
     return Intl.message(
-      'Please check your email and click on the link to verify your account',
-      name: 'email_verification_text_2',
-      desc: '',
+      'Health and Wellness',
+      name: 'health_and_wellness',
+      desc: 'Category name for goals related to physical and mental health',
       args: [],
     );
   }
 
-  /// `If you do not receive an email within a few minutes, please check your spam folder`
-  String get email_verification_text_3 {
+  /// `Financial Goals`
+  String get financial_goals {
     return Intl.message(
-      'If you do not receive an email within a few minutes, please check your spam folder',
-      name: 'email_verification_text_3',
-      desc: '',
+      'Financial Goals',
+      name: 'financial_goals',
+      desc:
+          'Category name for goals related to money management and financial planning',
       args: [],
     );
   }
 
-  /// `If you still do not receive an email, please contact us`
-  String get email_verification_text_4 {
+  /// `Social and Relationships`
+  String get social_and_relationships {
     return Intl.message(
-      'If you still do not receive an email, please contact us',
-      name: 'email_verification_text_4',
-      desc: '',
+      'Social and Relationships',
+      name: 'social_and_relationships',
+      desc:
+          'Category name for goals related to social life and personal relationships',
       args: [],
     );
   }
 
-  /// `We are sorry for the inconvenience`
-  String get email_verification_text_5 {
+  /// `Creativity and Hobbies`
+  String get creativity_and_hobbies {
     return Intl.message(
-      'We are sorry for the inconvenience',
-      name: 'email_verification_text_5',
-      desc: '',
+      'Creativity and Hobbies',
+      name: 'creativity_and_hobbies',
+      desc:
+          'Category name for goals related to creative activities and hobbies',
       args: [],
     );
   }
 
-  /// `Thank you for your patience`
-  String get email_verification_text_6 {
+  /// `Spiritual and Emotional Growth`
+  String get spiritual_and_emotional_growth {
     return Intl.message(
-      'Thank you for your patience',
-      name: 'email_verification_text_6',
-      desc: '',
+      'Spiritual and Emotional Growth',
+      name: 'spiritual_and_emotional_growth',
+      desc:
+          'Category name for goals related to emotional wellbeing and spirituality',
       args: [],
     );
   }
 
-  /// `Resend email`
-  String get email_verification_text_7 {
+  /// `Travel and Adventure`
+  String get travel_and_adventure {
     return Intl.message(
-      'Resend email',
-      name: 'email_verification_text_7',
-      desc: '',
+      'Travel and Adventure',
+      name: 'travel_and_adventure',
+      desc: 'Category name for goals related to travel and exploration',
       args: [],
     );
   }
 
-  /// `Go to login`
-  String get email_verification_text_8 {
+  /// `Daily Habits`
+  String get daily_habits {
     return Intl.message(
-      'Go to login',
-      name: 'email_verification_text_8',
-      desc: '',
+      'Daily Habits',
+      name: 'daily_habits',
+      desc: 'Category name for goals related to establishing daily routines',
       args: [],
     );
   }
 
-  /// `Email verified`
-  String get email_verification_text_9 {
+  /// `Environment and Sustainability`
+  String get environment_and_sustainability {
     return Intl.message(
-      'Email verified',
-      name: 'email_verification_text_9',
-      desc: '',
+      'Environment and Sustainability',
+      name: 'environment_and_sustainability',
+      desc:
+          'Category name for goals related to environmental awareness and sustainability',
       args: [],
     );
   }
 
-  /// `Your email has been verified`
-  String get email_verification_text_10 {
+  /// `Family and Relationships`
+  String get family_and_relationships {
     return Intl.message(
-      'Your email has been verified',
-      name: 'email_verification_text_10',
-      desc: '',
+      'Family and Relationships',
+      name: 'family_and_relationships',
+      desc: 'Category name for goals focused on family and close relationships',
       args: [],
     );
   }
 
-  /// `You can now login to your account`
-  String get email_verification_text_11 {
+  /// `Volunteering and Help`
+  String get volunteering_and_help {
     return Intl.message(
-      'You can now login to your account',
-      name: 'email_verification_text_11',
-      desc: '',
+      'Volunteering and Help',
+      name: 'volunteering_and_help',
+      desc:
+          'Category name for goals related to volunteering and helping others',
       args: [],
     );
   }
 
-  /// `Devices`
-  String get bottomnavbar_devices {
+  /// `It seems like you have no goals created yet. Let's create a new one!`
+  String get create_a_new_goal_description {
     return Intl.message(
-      'Devices',
-      name: 'bottomnavbar_devices',
-      desc: '',
+      'It seems like you have no goals created yet. Let\'s create a new one!',
+      name: 'create_a_new_goal_description',
+      desc:
+          'Prompt shown when the user has no goals, encouraging goal creation',
       args: [],
     );
   }
 
-  /// `Plants`
-  String get bottomnavbar_plants {
+  /// `Create a new goal`
+  String get create_a_new_goal {
     return Intl.message(
-      'Plants',
-      name: 'bottomnavbar_plants',
-      desc: '',
+      'Create a new goal',
+      name: 'create_a_new_goal',
+      desc: 'Button label to start creating a new goal',
       args: [],
     );
   }
 
-  /// `Home`
-  String get bottomnavbar_home {
+  /// `Create your own category`
+  String get create_your_own_category {
     return Intl.message(
-      'Home',
-      name: 'bottomnavbar_home',
-      desc: '',
+      'Create your own category',
+      name: 'create_your_own_category',
+      desc: 'Option to allow users to create custom goal categories',
       args: [],
     );
   }
 
-  /// `Calendar`
-  String get bottomnavbar_calendar {
+  /// `Categories`
+  String get categories_title {
     return Intl.message(
-      'Calendar',
-      name: 'bottomnavbar_calendar',
-      desc: '',
+      'Categories',
+      name: 'categories_title',
+      desc: 'Title label for the categories section',
       args: [],
     );
   }
 
-  /// `1. Accept Camera Permission.`
-  String get qr_code_text1 {
+  /// `Normal`
+  String get normal {
     return Intl.message(
-      '1. Accept Camera Permission.',
-      name: 'qr_code_text1',
-      desc: '',
+      'Normal',
+      name: 'normal',
+      desc: 'Label for a normal priority or status',
       args: [],
     );
   }
 
-  /// `2. Scan the QR code in the booklet given to you.`
-  String get qr_code_text2 {
+  /// `Crowned`
+  String get crowned {
     return Intl.message(
-      '2. Scan the QR code in the booklet given to you.',
-      name: 'qr_code_text2',
-      desc: '',
+      'Crowned',
+      name: 'crowned',
+      desc: 'Label indicating a special or highlighted priority/status',
       args: [],
     );
   }
 
-  /// `3. Press "Done" after the scan is complete.`
-  String get qr_code_text3 {
+  /// `Important`
+  String get important {
     return Intl.message(
-      '3. Press "Done" after the scan is complete.',
-      name: 'qr_code_text3',
-      desc: '',
+      'Important',
+      name: 'important',
+      desc: 'Label indicating high priority or importance',
       args: [],
     );
   }
 
-  /// `Learn Plants Growing`
-  String get home_page_title {
+  /// `Goal Type`
+  String get goal_type {
     return Intl.message(
-      'Learn Plants Growing',
-      name: 'home_page_title',
-      desc: '',
+      'Goal Type',
+      name: 'goal_type',
+      desc: 'Label for selecting the goal\'s importance level',
       args: [],
     );
   }
 
-  /// `1. Choose your Crops`
-  String get home_page_card1_title {
+  /// `Choose the importance level for your goal`
+  String get goal_type_description {
     return Intl.message(
-      '1. Choose your Crops',
-      name: 'home_page_card1_title',
-      desc: '',
+      'Choose the importance level for your goal',
+      name: 'goal_type_description',
+      desc: 'Description for selecting goal importance',
       args: [],
     );
   }
 
-  /// `Pick from 60 varieties such as butter lettuce, shiso, Portuguese kale, and chamomile.`
-  String get home_page_card1_bodytext {
+  /// `Selected category`
+  String get selected_category {
     return Intl.message(
-      'Pick from 60 varieties such as butter lettuce, shiso, Portuguese kale, and chamomile.',
-      name: 'home_page_card1_bodytext',
-      desc: '',
+      'Selected category',
+      name: 'selected_category',
+      desc: 'Label showing the currently selected goal category',
       args: [],
     );
   }
 
-  /// `2. Insert Seedpods`
-  String get home_page_card2_title {
+  /// `Enter goal name`
+  String get enter_goal_name {
     return Intl.message(
-      '2. Insert Seedpods',
-      name: 'home_page_card2_title',
-      desc: '',
+      'Enter goal name',
+      name: 'enter_goal_name',
+      desc: 'Placeholder text for entering the goal\'s name',
       args: [],
     );
   }
 
-  /// `When they arrive at your door, pop them in the nursery, slide it closed and watch them sprout.`
-  String get home_page_card2_bodytext {
+  /// `What do you want to achieve?`
+  String get enter_goal_description {
     return Intl.message(
-      'When they arrive at your door, pop them in the nursery, slide it closed and watch them sprout.',
-      name: 'home_page_card2_bodytext',
-      desc: '',
+      'What do you want to achieve?',
+      name: 'enter_goal_description',
+      desc: 'Prompt asking the user to describe their goal',
       args: [],
     );
   }
 
-  /// `3. Effortless Growing`
-  String get home_page_card3_title {
+  /// `Goal name is required`
+  String get goal_name_required {
     return Intl.message(
-      '3. Effortless Growing',
-      name: 'home_page_card3_title',
-      desc: '',
+      'Goal name is required',
+      name: 'goal_name_required',
+      desc: 'Validation message when goal name is missing',
       args: [],
     );
   }
 
-  /// `Tarlam automatically optimizes growth and gives your crops exactly what they need.`
-  String get home_page_card3_bodytext {
+  /// `Loading...`
+  String get loading {
     return Intl.message(
-      'Tarlam automatically optimizes growth and gives your crops exactly what they need.',
-      name: 'home_page_card3_bodytext',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `4. Harvest to your Plate`
-  String get home_page_card4_title {
-    return Intl.message(
-      '4. Harvest to your Plate',
-      name: 'home_page_card4_title',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Get an alert when your produce is ready so you can harvest what you need when you need it.`
-  String get home_page_card4_bodytext {
-    return Intl.message(
-      'Get an alert when your produce is ready so you can harvest what you need when you need it.',
-      name: 'home_page_card4_bodytext',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Your Devices`
-  String get devices_page_title {
-    return Intl.message(
-      'Your Devices',
-      name: 'devices_page_title',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Add Device`
-  String get devices_page_add_device {
-    return Intl.message(
-      'Add Device',
-      name: 'devices_page_add_device',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Plants`
-  String get plants_page_title {
-    return Intl.message(
-      'Plants',
-      name: 'plants_page_title',
-      desc: '',
+      'Loading...',
+      name: 'loading',
+      desc: 'Label indicating that a loading process is in progress',
       args: [],
     );
   }

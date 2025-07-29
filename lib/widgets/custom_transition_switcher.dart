@@ -11,7 +11,7 @@ class CustomTransitionSwitcher extends StatelessWidget {
     this.child,
     this.reverse = false,
     this.transitionType = SharedAxisTransitionType.scaled,
-    this.duration = const Duration(milliseconds: 500),
+    this.duration = const Duration(milliseconds: 0),
   });
 
   @override
