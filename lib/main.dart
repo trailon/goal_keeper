@@ -24,6 +24,7 @@ Future<void> main() async {
     anonKey: AppDefaults.kSupaBaseAnonKey,
   );
   Animate.restartOnHotReload = true;
+  // ignore: dead_code
   if (kDebugMode && false) {
     final client = Supabase.instance.client;
     await client.auth.signOut();

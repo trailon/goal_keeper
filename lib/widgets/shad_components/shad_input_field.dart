@@ -46,7 +46,7 @@ class ShadCustomInputFormField extends StatelessWidget {
             controller: controller,
             placeholder: AutoSizeText(placeHolder),
             enabled: enabled,
-            suffix: suffixIcon != null
+            trailing: suffixIcon != null
                 ? IconButton(onPressed: suffixOnPressed, icon: suffixIcon!)
                 : null,
             description: AutoSizeText(

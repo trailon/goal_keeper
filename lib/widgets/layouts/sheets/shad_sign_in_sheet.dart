@@ -34,50 +34,49 @@ class ShadSignInSheet extends StatelessWidget {
             actionsAxis: Axis.vertical,
             actions: [
               ShadForm(
-                  key: formKey,
-                  child: Column(
-                    children: [
-                      ShadCustomInputFormField(
-                        controller:
-                            context.read<HomeViewModel>().userEmailController,
+                key: formKey,
+                child: Column(
+                  children: [
+                    ShadCustomInputFormField(
+                      controller:
+                          context.read<HomeViewModel>().userEmailController,
+                      onChanged:
+                          context.read<HomeViewModel>().userEmailOnChanged,
+                      validator: Validators.emailValidator,
+                      id: S.current.email,
+                      placeHolder: S.current.enter_email,
+                      description: S.current.enter_email_description,
+                    ),
+                    Selector<HomeViewModel, bool>(
+                      selector: (context, viewmodel) => viewmodel.obscure,
+                      builder: (context, obscure, child) =>
+                          ShadCustomInputFormField(
+                        controller: context
+                            .read<HomeViewModel>()
+                            .userPasswordController,
+                        obscure: obscure,
+                        suffixIcon: Icon(
+                          obscure ? Icons.visibility_off : Icons.visibility,
+                        ),
+                        suffixOnPressed:
+                            context.read<HomeViewModel>().switchObscure,
                         onChanged:
-                            context.read<HomeViewModel>().userEmailOnChanged,
-                        validator: Validators.emailValidator,
-                        id: S.current.email,
-                        placeHolder: S.current.enter_email,
-                        description: S.current.enter_email_description,
+                            context.read<HomeViewModel>().userPasswordOnChanged,
+                        validator: Validators.passwordValidator,
+                        id: S.current.password,
+                        placeHolder: S.current.enter_password,
+                        description: S.current.enter_password,
                       ),
-                      Selector<HomeViewModel, bool>(
-                        selector: (context, viewmodel) => viewmodel.obscure,
-                        builder: (context, obscure, child) =>
-                            ShadCustomInputFormField(
-                          controller: context
-                              .read<HomeViewModel>()
-                              .userPasswordController,
-                          obscure: obscure,
-                          suffixIcon: Icon(
-                            obscure ? Icons.visibility_off : Icons.visibility,
-                          ),
-                          suffixOnPressed:
-                              context.read<HomeViewModel>().switchObscure,
-                          onChanged: context
-                              .read<HomeViewModel>()
-                              .userPasswordOnChanged,
-                          validator: Validators.passwordValidator,
-                          id: S.current.password,
-                          placeHolder: S.current.enter_password,
-                          description: S.current.enter_password,
-                        ),
+                    ),
+                    ShadButton(
+                      onPressed: context.read<HomeViewModel>().submitLoginForm,
+                      child: AutoSizeText(
+                        S.current.sign_in,
                       ),
-                      ShadButton(
-                        onPressed:
-                            context.read<HomeViewModel>().submitLoginForm,
-                        child: AutoSizeText(
-                          S.current.sign_in,
-                        ),
-                      ),
-                    ],
-                  )),
+                    ),
+                  ],
+                ),
+              ),
             ],
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 20),

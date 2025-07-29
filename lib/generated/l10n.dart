@@ -55,7 +55,7 @@ class S {
     return Intl.message(
       'My Goals',
       name: 'my_goals',
-      desc: '',
+      desc: 'Label for the user\'s personal goals section on the home screen',
       args: [],
     );
   }
@@ -65,7 +65,7 @@ class S {
     return Intl.message(
       'Goal Keeper',
       name: 'goal_keeper',
-      desc: '',
+      desc: 'App name displayed in the header and splash screen',
       args: [],
     );
   }
@@ -75,7 +75,7 @@ class S {
     return Intl.message(
       'Search one of your GOALS',
       name: 'search_goal',
-      desc: '',
+      desc: 'Placeholder text for the search bar to find specific goals',
       args: [],
     );
   }
@@ -85,7 +85,7 @@ class S {
     return Intl.message(
       'Sign in',
       name: 'sign_in',
-      desc: '',
+      desc: 'Button label for user sign-in action',
       args: [],
     );
   }
@@ -95,7 +95,7 @@ class S {
     return Intl.message(
       'Already have one?',
       name: 'sign_in_alternative',
-      desc: '',
+      desc: 'Prompt asking if the user already has an account',
       args: [],
     );
   }
@@ -105,7 +105,7 @@ class S {
     return Intl.message(
       'Log in to your account',
       name: 'sign_in_text',
-      desc: '',
+      desc: 'Instruction text on the sign-in screen',
       args: [],
     );
   }
@@ -115,7 +115,7 @@ class S {
     return Intl.message(
       'Logged in successfully',
       name: 'sign_in_success',
-      desc: '',
+      desc: 'Notification message shown after successful login',
       args: [],
     );
   }
@@ -125,7 +125,7 @@ class S {
     return Intl.message(
       'Login Failed',
       name: 'sign_in_failed',
-      desc: '',
+      desc: 'Notification message shown when login fails',
       args: [],
     );
   }
@@ -135,7 +135,7 @@ class S {
     return Intl.message(
       'Sign up',
       name: 'sign_up',
-      desc: '',
+      desc: 'Button label for user sign-up action',
       args: [],
     );
   }
@@ -145,7 +145,7 @@ class S {
     return Intl.message(
       'Sign up failed',
       name: 'sign_up_failed',
-      desc: '',
+      desc: 'Notification message shown when sign-up fails',
       args: [],
     );
   }
@@ -155,7 +155,7 @@ class S {
     return Intl.message(
       'Account created successfully',
       name: 'sign_up_success',
-      desc: '',
+      desc: 'Notification message shown after successful account creation',
       args: [],
     );
   }
@@ -165,7 +165,7 @@ class S {
     return Intl.message(
       'Create an account',
       name: 'sign_up_create',
-      desc: '',
+      desc: 'Heading text prompting the user to create a new account',
       args: [],
     );
   }
@@ -175,7 +175,7 @@ class S {
     return Intl.message(
       'Don\'t you have an account yet? Create one for a better personalized experience and synchronizing your datas between platforms',
       name: 'sign_up_text_suggestion',
-      desc: '',
+      desc: 'Encouragement text to motivate users to create an account',
       args: [],
     );
   }
@@ -185,7 +185,7 @@ class S {
     return Intl.message(
       'Create an account to access all the features of Goal Keeper, including personalized recommendations, notifications and more incoming features.',
       name: 'sign_up_text_description',
-      desc: '',
+      desc: 'Detailed explanation of benefits for creating an account',
       args: [],
     );
   }
@@ -195,7 +195,7 @@ class S {
     return Intl.message(
       'Done',
       name: 'done',
-      desc: '',
+      desc: 'Generic confirmation button label',
       args: [],
     );
   }
@@ -205,7 +205,7 @@ class S {
     return Intl.message(
       'Next',
       name: 'next',
-      desc: '',
+      desc: 'Button label to proceed to the next step or screen',
       args: [],
     );
   }
@@ -215,7 +215,7 @@ class S {
     return Intl.message(
       'Your Name',
       name: 'name',
-      desc: '',
+      desc: 'Label for the user\'s first name input field',
       args: [],
     );
   }
@@ -225,7 +225,7 @@ class S {
     return Intl.message(
       'Name must contains only letters',
       name: 'enter_valid_name',
-      desc: '',
+      desc: 'Validation message for invalid name input',
       args: [],
     );
   }
@@ -235,7 +235,7 @@ class S {
     return Intl.message(
       'Enter your name',
       name: 'enter_name',
-      desc: '',
+      desc: 'Placeholder or prompt for entering user\'s first name',
       args: [],
     );
   }
@@ -245,7 +245,7 @@ class S {
     return Intl.message(
       'Your name is required to personalize your experience and synchronize your data between platforms',
       name: 'enter_name_description',
-      desc: '',
+      desc: 'Explanation why the user\'s name is needed',
       args: [],
     );
   }
@@ -255,7 +255,7 @@ class S {
     return Intl.message(
       'Last Name',
       name: 'last_name',
-      desc: '',
+      desc: 'Label for the user\'s last name input field',
       args: [],
     );
   }
@@ -265,7 +265,7 @@ class S {
     return Intl.message(
       'Enter your last name',
       name: 'enter_last_name',
-      desc: '',
+      desc: 'Placeholder or prompt for entering user\'s last name',
       args: [],
     );
   }
@@ -275,7 +275,7 @@ class S {
     return Intl.message(
       'Your last name is optional',
       name: 'enter_last_name_description',
-      desc: '',
+      desc: 'Information that last name input is optional',
       args: [],
     );
   }
@@ -285,7 +285,7 @@ class S {
     return Intl.message(
       'Email',
       name: 'email',
-      desc: '',
+      desc: 'Label for the user\'s email input field',
       args: [],
     );
   }
@@ -295,7 +295,7 @@ class S {
     return Intl.message(
       'Password',
       name: 'password',
-      desc: '',
+      desc: 'Label for the user\'s password input field',
       args: [],
     );
   }
@@ -305,7 +305,7 @@ class S {
     return Intl.message(
       'Confirm Password',
       name: 'confirm_password',
-      desc: '',
+      desc: 'Label for the password confirmation input field',
       args: [],
     );
   }
@@ -315,7 +315,7 @@ class S {
     return Intl.message(
       'Forgot password?',
       name: 'forgot_password',
-      desc: '',
+      desc: 'Link text to initiate password recovery process',
       args: [],
     );
   }
@@ -325,7 +325,7 @@ class S {
     return Intl.message(
       'Remember me',
       name: 'remember_me',
-      desc: '',
+      desc: 'Checkbox label to keep user logged in',
       args: [],
     );
   }
@@ -335,7 +335,7 @@ class S {
     return Intl.message(
       'By creating an account you agree to our Terms of Service and Privacy Policy',
       name: 'privacy_policy_text',
-      desc: '',
+      desc: 'Legal disclaimer shown during account creation',
       args: [],
     );
   }
@@ -345,7 +345,7 @@ class S {
     return Intl.message(
       'Username',
       name: 'username',
-      desc: '',
+      desc: 'Label for the user\'s username input field',
       args: [],
     );
   }
@@ -355,7 +355,7 @@ class S {
     return Intl.message(
       'Enter a valid username (minimum 2 characters)',
       name: 'enter_valid_username',
-      desc: '',
+      desc: 'Validation message for invalid username input',
       args: [],
     );
   }
@@ -365,7 +365,7 @@ class S {
     return Intl.message(
       'Enter your username',
       name: 'enter_username',
-      desc: '',
+      desc: 'Placeholder or prompt for entering username',
       args: [],
     );
   }
@@ -375,7 +375,7 @@ class S {
     return Intl.message(
       'Username offers an optional personalized experience over your personal name',
       name: 'user_name_description',
-      desc: '',
+      desc: 'Explanation about the optional username usage',
       args: [],
     );
   }
@@ -385,7 +385,7 @@ class S {
     return Intl.message(
       'Enter your email',
       name: 'enter_email',
-      desc: '',
+      desc: 'Placeholder or prompt for entering email address',
       args: [],
     );
   }
@@ -395,7 +395,7 @@ class S {
     return Intl.message(
       'An email is required to verify your account and log in between platforms',
       name: 'enter_email_description',
-      desc: '',
+      desc: 'Explanation why email is required',
       args: [],
     );
   }
@@ -405,7 +405,7 @@ class S {
     return Intl.message(
       'Enter your password',
       name: 'enter_password',
-      desc: '',
+      desc: 'Placeholder or prompt for entering password',
       args: [],
     );
   }
@@ -415,7 +415,7 @@ class S {
     return Intl.message(
       'Enter a valid email',
       name: 'enter_valid_email',
-      desc: '',
+      desc: 'Validation message for invalid email format',
       args: [],
     );
   }
@@ -425,7 +425,7 @@ class S {
     return Intl.message(
       'Password must be at least 6 characters long',
       name: 'password_length_checker',
-      desc: '',
+      desc: 'Validation message for password length requirement',
       args: [],
     );
   }
@@ -435,7 +435,7 @@ class S {
     return Intl.message(
       'We don\'t wanna bore you.',
       name: 'we_dont_wanna_bore_you',
-      desc: '',
+      desc: 'Friendly message explaining not to show sign-in dialog repeatedly',
       args: [],
     );
   }
@@ -445,7 +445,8 @@ class S {
     return Intl.message(
       'So we won\'t show the signin dialog again but if you want to sign up someday you can do it via clicking app icon at the top left!',
       name: 'we_dont_wanna_bore_you_description',
-      desc: '',
+      desc:
+          'Additional explanation about sign-in dialog behavior and how to sign up later',
       args: [],
     );
   }
@@ -455,7 +456,8 @@ class S {
     return Intl.message(
       'User already exists',
       name: 'user_already_exists',
-      desc: '',
+      desc:
+          'Error message when trying to create an account with an existing username',
       args: [],
     );
   }
@@ -465,7 +467,8 @@ class S {
     return Intl.message(
       'Email already exists',
       name: 'email_already_exists',
-      desc: '',
+      desc:
+          'Error message when trying to create an account with an existing email',
       args: [],
     );
   }
@@ -475,7 +478,8 @@ class S {
     return Intl.message(
       'Email not found',
       name: 'email_not_found',
-      desc: '',
+      desc:
+          'Error message when email is not found during login or password recovery',
       args: [],
     );
   }
@@ -485,7 +489,7 @@ class S {
     return Intl.message(
       'Invalid credentials',
       name: 'invalid_credentials',
-      desc: '',
+      desc: 'Error message for incorrect username/email or password',
       args: [],
     );
   }
@@ -495,7 +499,7 @@ class S {
     return Intl.message(
       'Career and Work Life',
       name: 'career_and_work_life',
-      desc: '',
+      desc: 'Category name for goals related to career and professional life',
       args: [],
     );
   }
@@ -505,7 +509,7 @@ class S {
     return Intl.message(
       'Personal Development',
       name: 'personal_development',
-      desc: '',
+      desc: 'Category name for goals related to self-improvement and growth',
       args: [],
     );
   }
@@ -515,7 +519,7 @@ class S {
     return Intl.message(
       'Education and Learning',
       name: 'education_and_learning',
-      desc: '',
+      desc: 'Category name for goals related to acquiring knowledge and skills',
       args: [],
     );
   }
@@ -525,7 +529,7 @@ class S {
     return Intl.message(
       'Health and Wellness',
       name: 'health_and_wellness',
-      desc: '',
+      desc: 'Category name for goals related to physical and mental health',
       args: [],
     );
   }
@@ -535,7 +539,8 @@ class S {
     return Intl.message(
       'Financial Goals',
       name: 'financial_goals',
-      desc: '',
+      desc:
+          'Category name for goals related to money management and financial planning',
       args: [],
     );
   }
@@ -545,7 +550,8 @@ class S {
     return Intl.message(
       'Social and Relationships',
       name: 'social_and_relationships',
-      desc: '',
+      desc:
+          'Category name for goals related to social life and personal relationships',
       args: [],
     );
   }
@@ -555,7 +561,8 @@ class S {
     return Intl.message(
       'Creativity and Hobbies',
       name: 'creativity_and_hobbies',
-      desc: '',
+      desc:
+          'Category name for goals related to creative activities and hobbies',
       args: [],
     );
   }
@@ -565,7 +572,8 @@ class S {
     return Intl.message(
       'Spiritual and Emotional Growth',
       name: 'spiritual_and_emotional_growth',
-      desc: '',
+      desc:
+          'Category name for goals related to emotional wellbeing and spirituality',
       args: [],
     );
   }
@@ -575,7 +583,7 @@ class S {
     return Intl.message(
       'Travel and Adventure',
       name: 'travel_and_adventure',
-      desc: '',
+      desc: 'Category name for goals related to travel and exploration',
       args: [],
     );
   }
@@ -585,7 +593,7 @@ class S {
     return Intl.message(
       'Daily Habits',
       name: 'daily_habits',
-      desc: '',
+      desc: 'Category name for goals related to establishing daily routines',
       args: [],
     );
   }
@@ -595,7 +603,8 @@ class S {
     return Intl.message(
       'Environment and Sustainability',
       name: 'environment_and_sustainability',
-      desc: '',
+      desc:
+          'Category name for goals related to environmental awareness and sustainability',
       args: [],
     );
   }
@@ -605,7 +614,7 @@ class S {
     return Intl.message(
       'Family and Relationships',
       name: 'family_and_relationships',
-      desc: '',
+      desc: 'Category name for goals focused on family and close relationships',
       args: [],
     );
   }
@@ -615,7 +624,8 @@ class S {
     return Intl.message(
       'Volunteering and Help',
       name: 'volunteering_and_help',
-      desc: '',
+      desc:
+          'Category name for goals related to volunteering and helping others',
       args: [],
     );
   }
@@ -625,7 +635,8 @@ class S {
     return Intl.message(
       'It seems like you have no goals created yet. Let\'s create a new one!',
       name: 'create_a_new_goal_description',
-      desc: '',
+      desc:
+          'Prompt shown when the user has no goals, encouraging goal creation',
       args: [],
     );
   }
@@ -635,7 +646,7 @@ class S {
     return Intl.message(
       'Create a new goal',
       name: 'create_a_new_goal',
-      desc: '',
+      desc: 'Button label to start creating a new goal',
       args: [],
     );
   }
@@ -645,7 +656,7 @@ class S {
     return Intl.message(
       'Create your own category',
       name: 'create_your_own_category',
-      desc: '',
+      desc: 'Option to allow users to create custom goal categories',
       args: [],
     );
   }
@@ -655,7 +666,107 @@ class S {
     return Intl.message(
       'Categories',
       name: 'categories_title',
-      desc: '',
+      desc: 'Title label for the categories section',
+      args: [],
+    );
+  }
+
+  /// `Normal`
+  String get normal {
+    return Intl.message(
+      'Normal',
+      name: 'normal',
+      desc: 'Label for a normal priority or status',
+      args: [],
+    );
+  }
+
+  /// `Crowned`
+  String get crowned {
+    return Intl.message(
+      'Crowned',
+      name: 'crowned',
+      desc: 'Label indicating a special or highlighted priority/status',
+      args: [],
+    );
+  }
+
+  /// `Important`
+  String get important {
+    return Intl.message(
+      'Important',
+      name: 'important',
+      desc: 'Label indicating high priority or importance',
+      args: [],
+    );
+  }
+
+  /// `Goal Type`
+  String get goal_type {
+    return Intl.message(
+      'Goal Type',
+      name: 'goal_type',
+      desc: 'Label for selecting the goal\'s importance level',
+      args: [],
+    );
+  }
+
+  /// `Choose the importance level for your goal`
+  String get goal_type_description {
+    return Intl.message(
+      'Choose the importance level for your goal',
+      name: 'goal_type_description',
+      desc: 'Description for selecting goal importance',
+      args: [],
+    );
+  }
+
+  /// `Selected category`
+  String get selected_category {
+    return Intl.message(
+      'Selected category',
+      name: 'selected_category',
+      desc: 'Label showing the currently selected goal category',
+      args: [],
+    );
+  }
+
+  /// `Enter goal name`
+  String get enter_goal_name {
+    return Intl.message(
+      'Enter goal name',
+      name: 'enter_goal_name',
+      desc: 'Placeholder text for entering the goal\'s name',
+      args: [],
+    );
+  }
+
+  /// `What do you want to achieve?`
+  String get enter_goal_description {
+    return Intl.message(
+      'What do you want to achieve?',
+      name: 'enter_goal_description',
+      desc: 'Prompt asking the user to describe their goal',
+      args: [],
+    );
+  }
+
+  /// `Goal name is required`
+  String get goal_name_required {
+    return Intl.message(
+      'Goal name is required',
+      name: 'goal_name_required',
+      desc: 'Validation message when goal name is missing',
+      args: [],
+    );
+  }
+
+  /// `Loading...`
+  String get loading {
+    return Intl.message(
+      'Loading...',
+      name: 'loading',
+      desc: 'Label indicating that a loading process is in progress',
       args: [],
     );
   }
