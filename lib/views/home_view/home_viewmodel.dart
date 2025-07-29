@@ -10,9 +10,11 @@ import 'package:goal_keeper/models/category_model.dart';
 import 'package:goal_keeper/services/storage_service.dart';
 import 'package:goal_keeper/widgets/layouts/sheets/shad_auth_sheet.dart';
 import 'package:goal_keeper/widgets/layouts/sheets/shad_category_pick_sheet.dart';
+import 'package:goal_keeper/widgets/layouts/sheets/shad_goal_creation_sheet.dart';
 import 'package:goal_keeper/widgets/layouts/sheets/shad_sign_in_sheet.dart';
 import 'package:goal_keeper/widgets/layouts/sheets/shad_sign_up_sheet.dart';
 import 'package:goal_keeper/widgets/shad_components/shad_create_goal_dialog.dart';
+import 'package:provider/provider.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart' as shadcn;
 import 'package:shadcn_ui/shadcn_ui.dart';
 
@@ -23,23 +25,21 @@ class HomeViewModel extends BaseViewModel {
   final formKey = GlobalKey<ShadFormState>();
   final signinformKey = GlobalKey<ShadFormState>();
   bool obscure = true;
-  TextEditingController userNameController =
-      TextEditingController(text: kDebugMode ? "veliksu" : null);
-  TextEditingController userEmailController =
-      TextEditingController(text: kDebugMode ? "cetinelv@gmail.com" : null);
-  TextEditingController userFirstNameController =
-      TextEditingController(text: kDebugMode ? "Kaan" : null);
-  TextEditingController userPasswordController =
-      TextEditingController(text: kDebugMode ? "315513" : null);
+  TextEditingController userNameController = TextEditingController(text: kDebugMode ? "veliksu" : null);
+  TextEditingController userEmailController = TextEditingController(text: kDebugMode ? "cetinelv@gmail.com" : null);
+  TextEditingController userFirstNameController = TextEditingController(text: kDebugMode ? "Kaan" : null);
+  TextEditingController userPasswordController = TextEditingController(text: kDebugMode ? "315513" : null);
 
-  final shadcn.StepperController stepperController =
-      shadcn.StepperController(currentStep: 0);
+  TextEditingController nameController = TextEditingController();
+
+  GoalTypeKey selectedGoalType = GoalTypeKey.normal;
+
+  final shadcn.StepperController stepperController = shadcn.StepperController(currentStep: 0);
   int get currentStep => stepperController.value.currentStep;
 
   List<GoalCategory> categories = [];
 
-  List<GoalCategory> get categoriesWithGoals =>
-      categories.where((category) => category.goals.isNotEmpty).toList();
+  List<GoalCategory> get categoriesWithGoals => categories.where((category) => category.goals.isNotEmpty).toList();
   @override
   void disposeModel() {}
 
@@ -57,8 +57,7 @@ class HomeViewModel extends BaseViewModel {
   }
 
   Future<void> checkForAuth([bool bypass = false]) async {
-    if (supaClient.auth.currentUser == null &&
-        (!StorageService.getAskedForAuthOnce() || bypass)) {
+    if (supaClient.auth.currentUser == null && (!StorageService.getAskedForAuthOnce() || bypass)) {
       await authBottomSheetAsk(bypass);
       switch (authNav) {
         case ShadAuthModal.signUp:
@@ -71,8 +70,7 @@ class HomeViewModel extends BaseViewModel {
               context: context,
               builder: (context) => ShadDialog.alert(
                 title: AutoSizeText(S.current.we_dont_wanna_bore_you),
-                child:
-                    AutoSizeText(S.current.we_dont_wanna_bore_you_description),
+                child: AutoSizeText(S.current.we_dont_wanna_bore_you_description),
               ),
             );
             await super.supaClient.auth.signInAnonymously();
@@ -123,16 +121,23 @@ class HomeViewModel extends BaseViewModel {
     createGoalBySelectedCategory(selectedCategory);
   }
 
-  Future<void> createGoalBySelectedCategory(
-      GoalCategory selectedCategory) async {
-    await showShadDialog(
+  Future<void> createGoalBySelectedCategory(GoalCategory selectedCategory) async {
+    final created = await showShadSheet<bool>(
       context: context,
-      builder: (context) {
-        return ShadCreateGoalDialog(
-          goalCategory: selectedCategory,
-        );
-      },
+      side: ShadSheetSide.bottom,
+      builder: (context) => ChangeNotifierProvider.value(
+        value: this,
+        child: ShadGoalCreationSheet(
+          selectedCategory: selectedCategory,
+        ),
+      ),
     );
+
+    if (created == true) {
+      EasyLoading.showSuccess("Goal created");
+      await fetchCategories();
+      notifyListeners();
+    }
   }
 
   Future<void> authBottomSheetAsk([bool bypass = false]) async {
@@ -254,16 +259,50 @@ class HomeViewModel extends BaseViewModel {
     notifyListeners();
   }
 
+  void goalNameOnChanged(String value) {
+    nameController.text = value;
+    notifyListeners();
+  }
+
   switchObscure() {
     obscure = !obscure;
     notifyListeners();
   }
 
-  final colorWithOpacity = Colors.white.withOpacity(0.9);
-  Color? currentStepChecker(int index) =>
-      stepperController.value.currentStep == index ? colorWithOpacity : null;
+  void setGoalType(GoalTypeKey type) {
+    selectedGoalType = type;
+    notifyListeners();
+  }
+
+  final colorWithOpacity = Colors.white.withValues(alpha: 0.9);
+  Color? currentStepChecker(int index) => stepperController.value.currentStep == index ? colorWithOpacity : null;
 
   void testMethod() {
     fetchCategories();
+  }
+
+  Future<void> submitGoalCreation(GoalCategory selectedCategory) async {
+    final name = nameController.text.trim();
+
+    if (name.isEmpty) {
+      EasyLoading.showError(S.current.goal_name_required);
+      return;
+    }
+
+    EasyLoading.show(status: S.current.loading);
+
+    final created = await supaService.createANewGoalBySelectedCategory(
+      goalCategory: selectedCategory,
+      goalName: name,
+      goalTypeKey: selectedGoalType.name,
+    );
+
+    EasyLoading.dismiss();
+
+    if (created && context.mounted) {
+      Navigator.of(context).pop(true);
+    } else {
+      EasyLoading.showError("Failed to create goal");
+    }
   }
 }

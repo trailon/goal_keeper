@@ -24,8 +24,7 @@ class SupaService {
 
   Future<bool> login({required String email, required String password}) async {
     try {
-      final response = await client.auth
-          .signInWithPassword(email: email, password: password);
+      final response = await client.auth.signInWithPassword(email: email, password: password);
       if (response.session != null) {
         await client.auth.setSession(response.session!.refreshToken!);
         EasyLoading.showSuccess(S.current.sign_in_success);
@@ -42,13 +41,9 @@ class SupaService {
   }
 
   Future<bool> register(
-      {required String email,
-      required String password,
-      required String username,
-      required String firstname}) async {
+      {required String email, required String password, required String username, required String firstname}) async {
     try {
-      final response =
-          await client.auth.signUp(email: email, password: password, data: {
+      final response = await client.auth.signUp(email: email, password: password, data: {
         "username": username,
         "name": firstname,
       });
@@ -70,9 +65,7 @@ class SupaService {
   }
 
   Future<List<GoalCategory>> fetchCategories() async {
-    final response = await client
-        .from('categories')
-        .select('''
+    final response = await client.from('categories').select('''
          id,
          category_name,
          user_id,
@@ -90,9 +83,7 @@ class SupaService {
             update_date,
             chain_name
            )
-           )''')
-        .or('user_id.eq.${user?.id},user_id.is.NULL')
-        .eq('goals.user_id', user!.id);
+           )''').or('user_id.eq.${user?.id},user_id.is.NULL').eq('goals.user_id', user!.id);
     final categories = List.generate(
       response.length,
       (index) => GoalCategory.fromJson(response[index]),
@@ -100,10 +91,48 @@ class SupaService {
     return categories;
   }
 
-  Future<bool> createANewGoalBySelectedCategory(
-      {required GoalCategory goalCategory}) async {
-    //insert a new goal
-    return true;
+  Future<bool> createANewGoalBySelectedCategory({
+    required GoalCategory goalCategory,
+    required String goalName,
+    required String goalTypeKey,
+    int? chainId,
+    int? prerequisiteGoalId,
+  }) async {
+    try {
+      final response = await client.from('goals').insert({
+        'goal_name': goalName,
+        'category_id': goalCategory.id,
+        'user_id': user?.id,
+        'goal_type_key': goalTypeKey,
+        if (chainId != null) 'chain_id': chainId,
+        if (prerequisiteGoalId != null) 'prerequisite_goal_id': prerequisiteGoalId,
+      });
+      if (response.error != null) {
+        throw Exception(response.error!.message);
+      }
+      return true;
+    } catch (e) {
+      EasyLoading.showError('Failed to create goal');
+      return false;
+    }
+  }
+
+  Future<int?> createChain(String chainName) async {
+    try {
+      final response = await client
+          .from('chains')
+          .insert({
+            'chain_name': chainName,
+            'user_id': user?.id,
+          })
+          .select('id')
+          .single();
+
+      return response['id'] as int;
+    } catch (e) {
+      EasyLoading.showError('Failed to create chain');
+      return null;
+    }
   }
 
   Future<bool> logOut() async {
@@ -124,25 +153,6 @@ class SupaService {
       return false;
     }
   }
-
-  Stream<List<Map<String, dynamic>>> getHumidityAndAirTemperature(
-      String masterNode) {
-    return client
-        .from('metrics')
-        .stream(primaryKey: ['id'])
-        .eq('masternode', masterNode)
-        .limit(10)
-        .asBroadcastStream();
-  }
-
-  /* Future<List<Cabinet>> getCabinets() async {
-    final response = await client
-        .from('cabinet_rls')
-        .select('cabinet(id,model,floor_count,bt_mac_address,name)')
-        .eq('user_id', user!.id);
-    final cabinets = Cabinets.fromJson(response);
-    return cabinets.data;
-  } */
 
   void exceptionHandler(AuthException e) {
     switch (e.code) {

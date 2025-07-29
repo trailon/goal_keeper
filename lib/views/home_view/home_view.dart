@@ -30,7 +30,7 @@ class HomeView extends StatelessWidget {
           fabRequiresStatus: false,
           floatingActionButton: ShadButton(
             onPressed: context.read<HomeViewModel>().selectACategory,
-            icon: Icon(Icons.add),
+            leading: Icon(Icons.add),
             child: AutoSizeText(S.current.create_a_new_goal),
           ).animate().moveX(
                 end: context.width * 0.36,

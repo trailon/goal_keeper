@@ -24,7 +24,13 @@ class ShadCategoryPickSheet extends StatelessWidget {
       constraints: side == ShadSheetSide.left || side == ShadSheetSide.right
           ? const BoxConstraints(maxWidth: 512)
           : null,
-      title: AutoSizeText(S.current.categories_title),
+      title: ShadButton(
+        padding: EdgeInsets.all(0),
+        
+        child: AutoSizeText(
+          S.current.categories_title,
+        ),
+      ),
       actions: [
         ShadButton(
           onPressed: () {

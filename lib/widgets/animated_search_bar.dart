@@ -138,7 +138,7 @@ class AnimationSearchBar extends StatelessWidget {
                             padding: const EdgeInsets.all(3),
                             child: Icon(Icons.close,
                                 color: closeIconColor ??
-                                    Colors.black.withOpacity(.7))),
+                                    Colors.black.withValues(alpha: .7))),
                         onPressed: () {
                           ksearchNotifier.state = false;
                           searchTextEditingController.clear();
@@ -166,9 +166,10 @@ class AnimationSearchBar extends StatelessWidget {
                     alignment: Alignment.center,
                     decoration: searchFieldDecoration ??
                         BoxDecoration(
-                            color: Colors.black.withOpacity(.05),
+                            color: Colors.black.withValues(alpha: .05),
                             border: Border.all(
-                                color: Colors.black.withOpacity(.2), width: .5),
+                                color: Colors.black.withValues(alpha: .2),
+                                width: .5),
                             borderRadius: BorderRadius.circular(15)),
                     child: TextField(
                       controller: searchTextEditingController,
@@ -213,7 +214,7 @@ class AnimationSearchBar extends StatelessWidget {
                               child: Icon(Icons.search,
                                   size: 35,
                                   color: searchIconColor ??
-                                      Colors.black.withOpacity(.7))),
+                                      Colors.black.withValues(alpha: .7))),
                           onPressed: () => ksearchNotifier.state = true),
                     ),
                   ),
@@ -248,8 +249,9 @@ class KCustomButton extends StatelessWidget {
             color: Colors.transparent,
             borderRadius: BorderRadius.circular(radius ?? 50),
             child: InkWell(
-                splashColor: Theme.of(context).primaryColor.withOpacity(.2),
-                highlightColor: Theme.of(context).primaryColor.withOpacity(.05),
+                splashColor: Theme.of(context).primaryColor.withValues(alpha: .2),
+                highlightColor:
+                    Theme.of(context).primaryColor.withValues(alpha: .05),
                 onTap: onPressed,
                 onLongPress: onLongPress,
                 child: Padding(
@@ -277,8 +279,9 @@ class KBackButton extends StatelessWidget {
             color: Colors.transparent,
             borderRadius: BorderRadius.circular(50),
             child: InkWell(
-                splashColor: Theme.of(context).primaryColor.withOpacity(.2),
-                highlightColor: Theme.of(context).primaryColor.withOpacity(.05),
+                splashColor: Theme.of(context).primaryColor.withValues(alpha: .2),
+                highlightColor:
+                    Theme.of(context).primaryColor.withValues(alpha: .05),
                 onTap: onTap,
                 child: Padding(
                     padding: const EdgeInsets.all(3),
