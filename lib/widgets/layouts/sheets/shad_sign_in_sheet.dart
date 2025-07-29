@@ -19,6 +19,7 @@ class ShadSignInSheet extends StatelessWidget {
   final ShadSheetSide side;
   final GlobalKey<ShadFormState> formKey;
   final HomeViewModel homeViewModel;
+  
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider.value(
@@ -29,7 +30,7 @@ class ShadSignInSheet extends StatelessWidget {
                 side == ShadSheetSide.left || side == ShadSheetSide.right
                     ? const BoxConstraints(maxWidth: 512)
                     : null,
-            title: Text(S.current.sign_up),
+            title: Text(S.current.sign_in),
             description: Text(S.current.sign_in_text),
             actionsAxis: Axis.vertical,
             actions: [

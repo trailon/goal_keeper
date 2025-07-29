@@ -16,6 +16,8 @@
     "@sign_in": {
         "description": "Button label for user sign-in action"
     },
+    "sign_in_failed": "Sign in failed",
+    "sign_in_success": "Signed in successfully",
     "sign_in_alternative": "Already have one?",
     "@sign_in_alternative": {
         "description": "Prompt asking if the user already has an account"

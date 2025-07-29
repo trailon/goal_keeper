@@ -31,7 +31,6 @@ Future<void> main() async {
     await StorageService.pref.clear();
     debugPrint("current user: ${client.auth.currentUser}");
   }
-
   runApp(
     DevicePreview(
       enabled: false,

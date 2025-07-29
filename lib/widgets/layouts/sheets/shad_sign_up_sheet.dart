@@ -9,22 +9,6 @@ import 'package:provider/provider.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart' as shadcn;
 import 'package:shadcn_ui/shadcn_ui.dart';
 
-/* 
-class AddressEntryView extends StatelessWidget {
-  const AddressEntryView({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => AddressEntryViewModel(),
-      builder: (context, _) {
-        return const BasePageView<AddressEntryViewModel>(
-          content: _ViewContent(),
-        );
-      },
-    );
-  }
-}
- */
 class ShadSignUpSheet extends StatelessWidget {
   const ShadSignUpSheet(
       {super.key,

@@ -37,6 +37,7 @@ class SupaService {
       EasyLoading.showError(S.current.sign_in_failed);
       return false;
     }
+    EasyLoading.dismiss();
     return false;
   }
 
@@ -61,6 +62,7 @@ class SupaService {
       EasyLoading.showError(S.current.sign_up_failed);
       return false;
     }
+    EasyLoading.dismiss();
     return false;
   }
 

@@ -9,7 +9,7 @@ class ShadCustomInputFormField extends StatelessWidget {
       required this.id,
       this.label,
       required this.placeHolder,
-      required this.description,
+      this.description,
       this.validator,
       this.obscure = false,
       this.onPressed,
@@ -22,7 +22,7 @@ class ShadCustomInputFormField extends StatelessWidget {
   final dynamic id;
   final String? label;
   final String placeHolder;
-  final String description;
+  final String? description;
   final String? Function(String)? validator;
   final bool obscure;
   final bool enabled;
@@ -46,15 +46,16 @@ class ShadCustomInputFormField extends StatelessWidget {
             controller: controller,
             placeholder: AutoSizeText(placeHolder),
             enabled: enabled,
+            description: description != null
+                ? AutoSizeText(
+                    description!,
+                    maxFontSize: 12,
+                    minFontSize: 10,
+                  )
+                : SizedBox.shrink(),
             trailing: suffixIcon != null
                 ? IconButton(onPressed: suffixOnPressed, icon: suffixIcon!)
                 : null,
-            description: AutoSizeText(
-              description,
-              maxFontSize: 12,
-              minFontSize: 10,
-              textAlign: TextAlign.start,
-            ),
             validator: enabled ? validator : null),
         if (onPressed != null)
           Align(

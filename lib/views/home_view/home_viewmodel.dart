@@ -176,6 +176,7 @@ class HomeViewModel extends BaseViewModel {
         formKey: signinformKey,
         homeViewModel: this,
         side: ShadSheetSide.bottom,
+        homeViewModel: this,
         router: appRouter,
       ),
     );
@@ -186,10 +187,10 @@ class HomeViewModel extends BaseViewModel {
       side: ShadSheetSide.bottom,
       context: context,
       builder: (context) => ShadSignUpSheet(
+        formKey: formKey,
         side: ShadSheetSide.bottom,
         homeViewModel: this,
         router: appRouter,
-        formKey: formKey,
       ),
     );
   }
