@@ -13,6 +13,7 @@ import 'package:goal_keeper/widgets/layouts/sheets/shad_category_pick_sheet.dart
 import 'package:goal_keeper/widgets/layouts/sheets/shad_goal_creation_sheet.dart';
 import 'package:goal_keeper/widgets/layouts/sheets/shad_sign_in_sheet.dart';
 import 'package:goal_keeper/widgets/layouts/sheets/shad_sign_up_sheet.dart';
+import 'package:goal_keeper/widgets/shad_components/shad_create_goal_dialog.dart';
 import 'package:provider/provider.dart';
 import 'package:shadcn_flutter/shadcn_flutter.dart' as shadcn;
 import 'package:shadcn_ui/shadcn_ui.dart';
