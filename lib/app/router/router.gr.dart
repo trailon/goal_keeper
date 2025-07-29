@@ -1,3 +1,4 @@
+// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -13,10 +14,7 @@ part of 'router.dart';
 /// [DetailView]
 class DetailViewRoute extends PageRouteInfo<void> {
   const DetailViewRoute({List<PageRouteInfo>? children})
-      : super(
-          DetailViewRoute.name,
-          initialChildren: children,
-        );
+    : super(DetailViewRoute.name, initialChildren: children);
 
   static const String name = 'DetailViewRoute';
 
@@ -32,10 +30,7 @@ class DetailViewRoute extends PageRouteInfo<void> {
 /// [HomeView]
 class HomeViewRoute extends PageRouteInfo<void> {
   const HomeViewRoute({List<PageRouteInfo>? children})
-      : super(
-          HomeViewRoute.name,
-          initialChildren: children,
-        );
+    : super(HomeViewRoute.name, initialChildren: children);
 
   static const String name = 'HomeViewRoute';
 

@@ -1,63 +1,287 @@
 {
+    "@@locale": "en",
     "my_goals": "My Goals",
+    "@my_goals": {
+        "description": "Label for the user's personal goals section on the home screen"
+    },
     "goal_keeper": "Goal Keeper",
+    "@goal_keeper": {
+        "description": "App name displayed in the header and splash screen"
+    },
     "search_goal": "Search one of your GOALS",
+    "@search_goal": {
+        "description": "Placeholder text for the search bar to find specific goals"
+    },
     "sign_in": "Sign in",
+    "@sign_in": {
+        "description": "Button label for user sign-in action"
+    },
     "sign_in_alternative": "Already have one?",
+    "@sign_in_alternative": {
+        "description": "Prompt asking if the user already has an account"
+    },
     "sign_in_text": "Log in to your account",
+    "@sign_in_text": {
+        "description": "Instruction text on the sign-in screen"
+    },
     "sign_in_success": "Logged in successfully",
+    "@sign_in_success": {
+        "description": "Notification message shown after successful login"
+    },
     "sign_in_failed": "Login Failed",
+    "@sign_in_failed": {
+        "description": "Notification message shown when login fails"
+    },
     "sign_up": "Sign up",
+    "@sign_up": {
+        "description": "Button label for user sign-up action"
+    },
     "sign_up_failed": "Sign up failed",
+    "@sign_up_failed": {
+        "description": "Notification message shown when sign-up fails"
+    },
     "sign_up_success": "Account created successfully",
+    "@sign_up_success": {
+        "description": "Notification message shown after successful account creation"
+    },
     "sign_up_create": "Create an account",
+    "@sign_up_create": {
+        "description": "Heading text prompting the user to create a new account"
+    },
     "sign_up_text_suggestion": "Don't you have an account yet? Create one for a better personalized experience and synchronizing your datas between platforms",
+    "@sign_up_text_suggestion": {
+        "description": "Encouragement text to motivate users to create an account"
+    },
     "sign_up_text_description": "Create an account to access all the features of Goal Keeper, including personalized recommendations, notifications and more incoming features.",
+    "@sign_up_text_description": {
+        "description": "Detailed explanation of benefits for creating an account"
+    },
     "done": "Done",
+    "@done": {
+        "description": "Generic confirmation button label"
+    },
     "next": "Next",
+    "@next": {
+        "description": "Button label to proceed to the next step or screen"
+    },
     "name": "Your Name",
+    "@name": {
+        "description": "Label for the user's first name input field"
+    },
     "enter_valid_name": "Name must contains only letters",
+    "@enter_valid_name": {
+        "description": "Validation message for invalid name input"
+    },
     "enter_name": "Enter your name",
+    "@enter_name": {
+        "description": "Placeholder or prompt for entering user's first name"
+    },
     "enter_name_description": "Your name is required to personalize your experience and synchronize your data between platforms",
+    "@enter_name_description": {
+        "description": "Explanation why the user's name is needed"
+    },
     "last_name": "Last Name",
+    "@last_name": {
+        "description": "Label for the user's last name input field"
+    },
     "enter_last_name": "Enter your last name",
+    "@enter_last_name": {
+        "description": "Placeholder or prompt for entering user's last name"
+    },
     "enter_last_name_description": "Your last name is optional",
+    "@enter_last_name_description": {
+        "description": "Information that last name input is optional"
+    },
     "email": "Email",
+    "@email": {
+        "description": "Label for the user's email input field"
+    },
     "password": "Password",
+    "@password": {
+        "description": "Label for the user's password input field"
+    },
     "confirm_password": "Confirm Password",
+    "@confirm_password": {
+        "description": "Label for the password confirmation input field"
+    },
     "forgot_password": "Forgot password?",
+    "@forgot_password": {
+        "description": "Link text to initiate password recovery process"
+    },
     "remember_me": "Remember me",
+    "@remember_me": {
+        "description": "Checkbox label to keep user logged in"
+    },
     "privacy_policy_text": "By creating an account you agree to our Terms of Service and Privacy Policy",
+    "@privacy_policy_text": {
+        "description": "Legal disclaimer shown during account creation"
+    },
     "username": "Username",
+    "@username": {
+        "description": "Label for the user's username input field"
+    },
     "enter_valid_username": "Enter a valid username (minimum 2 characters)",
+    "@enter_valid_username": {
+        "description": "Validation message for invalid username input"
+    },
     "enter_username": "Enter your username",
+    "@enter_username": {
+        "description": "Placeholder or prompt for entering username"
+    },
     "user_name_description": "Username offers an optional personalized experience over your personal name",
+    "@user_name_description": {
+        "description": "Explanation about the optional username usage"
+    },
     "enter_email": "Enter your email",
+    "@enter_email": {
+        "description": "Placeholder or prompt for entering email address"
+    },
     "enter_email_description": "An email is required to verify your account and log in between platforms",
+    "@enter_email_description": {
+        "description": "Explanation why email is required"
+    },
     "enter_password": "Enter your password",
+    "@enter_password": {
+        "description": "Placeholder or prompt for entering password"
+    },
     "enter_valid_email": "Enter a valid email",
+    "@enter_valid_email": {
+        "description": "Validation message for invalid email format"
+    },
     "password_length_checker": "Password must be at least 6 characters long",
+    "@password_length_checker": {
+        "description": "Validation message for password length requirement"
+    },
     "we_dont_wanna_bore_you": "We don't wanna bore you.",
+    "@we_dont_wanna_bore_you": {
+        "description": "Friendly message explaining not to show sign-in dialog repeatedly"
+    },
     "we_dont_wanna_bore_you_description": "So we won't show the signin dialog again but if you want to sign up someday you can do it via clicking app icon at the top left!",
+    "@we_dont_wanna_bore_you_description": {
+        "description": "Additional explanation about sign-in dialog behavior and how to sign up later"
+    },
     "user_already_exists": "User already exists",
+    "@user_already_exists": {
+        "description": "Error message when trying to create an account with an existing username"
+    },
     "email_already_exists": "Email already exists",
+    "@email_already_exists": {
+        "description": "Error message when trying to create an account with an existing email"
+    },
     "email_not_found": "Email not found",
+    "@email_not_found": {
+        "description": "Error message when email is not found during login or password recovery"
+    },
     "invalid_credentials": "Invalid credentials",
+    "@invalid_credentials": {
+        "description": "Error message for incorrect username/email or password"
+    },
     "career_and_work_life": "Career and Work Life",
+    "@career_and_work_life": {
+        "description": "Category name for goals related to career and professional life"
+    },
     "personal_development": "Personal Development",
+    "@personal_development": {
+        "description": "Category name for goals related to self-improvement and growth"
+    },
     "education_and_learning": "Education and Learning",
+    "@education_and_learning": {
+        "description": "Category name for goals related to acquiring knowledge and skills"
+    },
     "health_and_wellness": "Health and Wellness",
+    "@health_and_wellness": {
+        "description": "Category name for goals related to physical and mental health"
+    },
     "financial_goals": "Financial Goals",
+    "@financial_goals": {
+        "description": "Category name for goals related to money management and financial planning"
+    },
     "social_and_relationships": "Social and Relationships",
+    "@social_and_relationships": {
+        "description": "Category name for goals related to social life and personal relationships"
+    },
     "creativity_and_hobbies": "Creativity and Hobbies",
+    "@creativity_and_hobbies": {
+        "description": "Category name for goals related to creative activities and hobbies"
+    },
     "spiritual_and_emotional_growth": "Spiritual and Emotional Growth",
+    "@spiritual_and_emotional_growth": {
+        "description": "Category name for goals related to emotional wellbeing and spirituality"
+    },
     "travel_and_adventure": "Travel and Adventure",
+    "@travel_and_adventure": {
+        "description": "Category name for goals related to travel and exploration"
+    },
     "daily_habits": "Daily Habits",
+    "@daily_habits": {
+        "description": "Category name for goals related to establishing daily routines"
+    },
     "environment_and_sustainability": "Environment and Sustainability",
+    "@environment_and_sustainability": {
+        "description": "Category name for goals related to environmental awareness and sustainability"
+    },
     "family_and_relationships": "Family and Relationships",
+    "@family_and_relationships": {
+        "description": "Category name for goals focused on family and close relationships"
+    },
     "volunteering_and_help": "Volunteering and Help",
+    "@volunteering_and_help": {
+        "description": "Category name for goals related to volunteering and helping others"
+    },
     "create_a_new_goal_description": "It seems like you have no goals created yet. Let's create a new one!",
+    "@create_a_new_goal_description": {
+        "description": "Prompt shown when the user has no goals, encouraging goal creation"
+    },
     "create_a_new_goal": "Create a new goal",
+    "@create_a_new_goal": {
+        "description": "Button label to start creating a new goal"
+    },
     "create_your_own_category": "Create your own category",
-    "categories_title": "Categories"
+    "@create_your_own_category": {
+        "description": "Option to allow users to create custom goal categories"
+    },
+    "categories_title": "Categories",
+    "@categories_title": {
+        "description": "Title label for the categories section"
+    },
+    "normal": "Normal",
+    "@normal": {
+        "description": "Label for a normal priority or status"
+    },
+    "crowned": "Crowned",
+    "@crowned": {
+        "description": "Label indicating a special or highlighted priority/status"
+    },
+    "important": "Important",
+    "@important": {
+        "description": "Label indicating high priority or importance"
+    },
+    "goal_type": "Goal Type",
+    "@goal_type": {
+        "description": "Label for selecting the goal's importance level"
+    },
+    "goal_type_description": "Choose the importance level for your goal",
+    "@goal_type_description": {
+        "description": "Description for selecting goal importance"
+    },
+    "selected_category": "Selected category",
+    "@selected_category": {
+        "description": "Label showing the currently selected goal category"
+    },
+    "enter_goal_name": "Enter goal name",
+    "@enter_goal_name": {
+        "description": "Placeholder text for entering the goal's name"
+    },
+    "enter_goal_description": "What do you want to achieve?",
+    "@enter_goal_description": {
+        "description": "Prompt asking the user to describe their goal"
+    },
+    "goal_name_required": "Goal name is required",
+    "@goal_name_required": {
+        "description": "Validation message when goal name is missing"
+    },
+    "loading": "Loading...",
+    "@loading": {
+        "description": "Label indicating that a loading process is in progress"
+    }
 }

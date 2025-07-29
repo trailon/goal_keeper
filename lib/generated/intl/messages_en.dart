@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Create your own category"),
         "creativity_and_hobbies":
             MessageLookupByLibrary.simpleMessage("Creativity and Hobbies"),
+        "crowned": MessageLookupByLibrary.simpleMessage("Crowned"),
         "daily_habits": MessageLookupByLibrary.simpleMessage("Daily Habits"),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
         "education_and_learning":
@@ -47,6 +48,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "enter_email": MessageLookupByLibrary.simpleMessage("Enter your email"),
         "enter_email_description": MessageLookupByLibrary.simpleMessage(
             "An email is required to verify your account and log in between platforms"),
+        "enter_goal_description": MessageLookupByLibrary.simpleMessage(
+            "What do you want to achieve?"),
+        "enter_goal_name":
+            MessageLookupByLibrary.simpleMessage("Enter goal name"),
         "enter_last_name":
             MessageLookupByLibrary.simpleMessage("Enter your last name"),
         "enter_last_name_description":
@@ -73,14 +78,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgot_password":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
         "goal_keeper": MessageLookupByLibrary.simpleMessage("Goal Keeper"),
+        "goal_name_required":
+            MessageLookupByLibrary.simpleMessage("Goal name is required"),
+        "goal_type": MessageLookupByLibrary.simpleMessage("Goal Type"),
+        "goal_type_description": MessageLookupByLibrary.simpleMessage(
+            "Choose the importance level for your goal"),
         "health_and_wellness":
             MessageLookupByLibrary.simpleMessage("Health and Wellness"),
+        "important": MessageLookupByLibrary.simpleMessage("Important"),
         "invalid_credentials":
             MessageLookupByLibrary.simpleMessage("Invalid credentials"),
         "last_name": MessageLookupByLibrary.simpleMessage("Last Name"),
+        "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
         "my_goals": MessageLookupByLibrary.simpleMessage("My Goals"),
         "name": MessageLookupByLibrary.simpleMessage("Your Name"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "normal": MessageLookupByLibrary.simpleMessage("Normal"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "password_length_checker": MessageLookupByLibrary.simpleMessage(
             "Password must be at least 6 characters long"),
@@ -91,6 +104,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "remember_me": MessageLookupByLibrary.simpleMessage("Remember me"),
         "search_goal":
             MessageLookupByLibrary.simpleMessage("Search one of your GOALS"),
+        "selected_category":
+            MessageLookupByLibrary.simpleMessage("Selected category"),
         "sign_in": MessageLookupByLibrary.simpleMessage("Sign in"),
         "sign_in_alternative":
             MessageLookupByLibrary.simpleMessage("Already have one?"),

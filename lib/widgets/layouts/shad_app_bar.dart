@@ -53,12 +53,12 @@ class ShadAppBar extends StatelessWidget implements PreferredSizeWidget {
           horizontalPadding: 5,
           verticalPadding: 0,
           //? Search icon color
-          searchIconColor: Colors.white.withOpacity(.7),
+          searchIconColor: Colors.white.withValues(alpha: .7),
           //? Search field background decoration
           searchFieldDecoration: BoxDecoration(
               color: darkTheme.colorScheme.selection,
               border:
-                  Border.all(color: Colors.black.withOpacity(.2), width: .5),
+                  Border.all(color: Colors.black.withValues(alpha: .2), width: .5),
               borderRadius: BorderRadius.circular(15)),
         ),
       ),
