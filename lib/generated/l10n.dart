@@ -90,22 +90,22 @@ class S {
     );
   }
 
-  /// `Sign in failed`
+  /// `Login Failed`
   String get sign_in_failed {
     return Intl.message(
-      'Sign in failed',
+      'Login Failed',
       name: 'sign_in_failed',
-      desc: '',
+      desc: 'Notification message shown when login fails',
       args: [],
     );
   }
 
-  /// `Signed in successfully`
+  /// `Logged in successfully`
   String get sign_in_success {
     return Intl.message(
-      'Signed in successfully',
+      'Logged in successfully',
       name: 'sign_in_success',
-      desc: '',
+      desc: 'Notification message shown after successful login',
       args: [],
     );
   }
@@ -126,26 +126,6 @@ class S {
       'Log in to your account',
       name: 'sign_in_text',
       desc: 'Instruction text on the sign-in screen',
-      args: [],
-    );
-  }
-
-  /// `Logged in successfully`
-  String get sign_in_success {
-    return Intl.message(
-      'Logged in successfully',
-      name: 'sign_in_success',
-      desc: 'Notification message shown after successful login',
-      args: [],
-    );
-  }
-
-  /// `Login Failed`
-  String get sign_in_failed {
-    return Intl.message(
-      'Login Failed',
-      name: 'sign_in_failed',
-      desc: 'Notification message shown when login fails',
       args: [],
     );
   }

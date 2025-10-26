@@ -11,11 +11,7 @@ import 'package:shadcn_ui/shadcn_ui.dart';
 
 class ShadSignUpSheet extends StatelessWidget {
   const ShadSignUpSheet(
-      {super.key,
-      required this.side,
-      required this.router,
-      required this.homeViewModel,
-      required this.formKey});
+      {super.key, required this.side, required this.router, required this.homeViewModel, required this.formKey});
   final AppRouter router;
   final ShadSheetSide side;
   final HomeViewModel homeViewModel;
@@ -26,9 +22,8 @@ class ShadSignUpSheet extends StatelessWidget {
     return ChangeNotifierProvider.value(
       value: homeViewModel,
       builder: (context, child) => ShadSheet(
-        constraints: side == ShadSheetSide.left || side == ShadSheetSide.right
-            ? const BoxConstraints(maxWidth: 512)
-            : null,
+        constraints:
+            side == ShadSheetSide.left || side == ShadSheetSide.right ? const BoxConstraints(maxWidth: 512) : null,
         title: Text(S.current.sign_up),
         description: Text(S.current.sign_up_text_description),
         actions: [],
@@ -36,7 +31,7 @@ class ShadSignUpSheet extends StatelessWidget {
           key: formKey,
           child: shadcn.Theme(
             data: shadcn.ThemeData(
-              colorScheme: shadcn.ColorSchemes.darkSlate(),
+              colorScheme: shadcn.ColorSchemes.darkBlue,
               radius: 0.7,
             ),
             child: Selector<HomeViewModel, int>(
@@ -51,17 +46,12 @@ class ShadSignUpSheet extends StatelessWidget {
                     title: AutoSizeText(
                       S.current.username,
                       style: TextStyle(
-                          color: context
-                              .read<HomeViewModel>()
-                              .currentStepChecker(0),
-                          fontWeight: FontWeight.bold),
+                          color: context.read<HomeViewModel>().currentStepChecker(0), fontWeight: FontWeight.bold),
                     ),
                     icon: Icon(Icons.tag),
                     contentBuilder: (context) => ShadCustomInputFormField(
-                      controller:
-                          context.read<HomeViewModel>().userNameController,
-                      onChanged:
-                          context.read<HomeViewModel>().userNameOnChanged,
+                      controller: context.read<HomeViewModel>().userNameController,
+                      onChanged: context.read<HomeViewModel>().userNameOnChanged,
                       onPressed: context.read<HomeViewModel>().nextStep,
                       validator: Validators.userNameValidator,
                       enabled: 0 <= currentStep,
@@ -74,17 +64,12 @@ class ShadSignUpSheet extends StatelessWidget {
                     title: AutoSizeText(
                       S.current.email,
                       style: TextStyle(
-                          color: context
-                              .read<HomeViewModel>()
-                              .currentStepChecker(1),
-                          fontWeight: FontWeight.bold),
+                          color: context.read<HomeViewModel>().currentStepChecker(1), fontWeight: FontWeight.bold),
                     ),
                     icon: Icon(Icons.mail),
                     contentBuilder: (context) => ShadCustomInputFormField(
-                      controller:
-                          context.read<HomeViewModel>().userEmailController,
-                      onChanged:
-                          context.read<HomeViewModel>().userEmailOnChanged,
+                      controller: context.read<HomeViewModel>().userEmailController,
+                      onChanged: context.read<HomeViewModel>().userEmailOnChanged,
                       onPressed: context.read<HomeViewModel>().nextStep,
                       validator: Validators.emailValidator,
                       enabled: 1 <= currentStep,
@@ -97,17 +82,12 @@ class ShadSignUpSheet extends StatelessWidget {
                     title: AutoSizeText(
                       S.current.name,
                       style: TextStyle(
-                          color: context
-                              .read<HomeViewModel>()
-                              .currentStepChecker(2),
-                          fontWeight: FontWeight.bold),
+                          color: context.read<HomeViewModel>().currentStepChecker(2), fontWeight: FontWeight.bold),
                     ),
                     icon: Icon(Icons.person),
                     contentBuilder: (context) => ShadCustomInputFormField(
-                      controller:
-                          context.read<HomeViewModel>().userFirstNameController,
-                      onChanged:
-                          context.read<HomeViewModel>().userFirstNameOnChanged,
+                      controller: context.read<HomeViewModel>().userFirstNameController,
+                      onChanged: context.read<HomeViewModel>().userFirstNameOnChanged,
                       onPressed: context.read<HomeViewModel>().nextStep,
                       validator: Validators.nameValidator,
                       enabled: 2 <= currentStep,
@@ -120,21 +100,14 @@ class ShadSignUpSheet extends StatelessWidget {
                     title: AutoSizeText(
                       S.current.password,
                       style: TextStyle(
-                          color: context
-                              .read<HomeViewModel>()
-                              .currentStepChecker(3),
-                          fontWeight: FontWeight.bold),
+                          color: context.read<HomeViewModel>().currentStepChecker(3), fontWeight: FontWeight.bold),
                     ),
                     icon: Icon(Icons.password),
                     contentBuilder: (context) => Selector<HomeViewModel, bool>(
                       selector: (context, model) => model.obscure,
-                      builder: (context, obscure, child) =>
-                          ShadCustomInputFormField(
-                        controller: context
-                            .read<HomeViewModel>()
-                            .userPasswordController,
-                        onChanged:
-                            context.read<HomeViewModel>().userPasswordOnChanged,
+                      builder: (context, obscure, child) => ShadCustomInputFormField(
+                        controller: context.read<HomeViewModel>().userPasswordController,
+                        onChanged: context.read<HomeViewModel>().userPasswordOnChanged,
                         onPressed: context.read<HomeViewModel>().submitForm,
                         validator: Validators.passwordValidator,
                         enabled: 3 <= currentStep,
@@ -143,8 +116,7 @@ class ShadSignUpSheet extends StatelessWidget {
                         suffixIcon: Icon(
                           obscure ? Icons.visibility : Icons.visibility_off,
                         ),
-                        suffixOnPressed:
-                            context.read<HomeViewModel>().switchObscure,
+                        suffixOnPressed: context.read<HomeViewModel>().switchObscure,
                         submitText: S.current.sign_up,
                         placeHolder: S.current.enter_password,
                         description: S.current.enter_password,
@@ -200,9 +172,5 @@ class ShadInputDatas {
   final String placeHolder;
   final String description;
 
-  ShadInputDatas(
-      {required this.id,
-      required this.label,
-      required this.placeHolder,
-      required this.description});
+  ShadInputDatas({required this.id, required this.label, required this.placeHolder, required this.description});
 }
